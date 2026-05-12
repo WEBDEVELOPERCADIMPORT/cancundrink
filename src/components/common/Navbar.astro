@@ -2,6 +2,7 @@
 import type { Lang } from '../../i18n/config.i18n';
 import { ui } from "../../i18n/ui.i18n";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils.i18n';
+import { Globe } from 'lucide-astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,11 +14,11 @@ const switchLangPath =
     : currentPath.replace("/en", "/es");
 ---
 
-<nav class="sticky top-0 z-50 w-full px-6 py-4 bg-transparent  backdrop-blur-md border-b border-gray-100">
+<nav class="sticky top-0 z-50 w-full px-6 py-4 bg-white-cancun  backdrop-blur-md border-b border-gray-100">
   <div class="max-w-7xl mx-auto flex justify-between items-center">
     
     <a href={`/${lang}/`} class="flex items-center gap-2 transition hover:opacity-80">
-      <img src="/icono_cancun.png" class="w-10 h-10 object-contain" alt="Logo del sitio" />
+      <img src="/logo_cancun.png" class="w-auto h-10 object-contain" alt="Logo del sitio" />
     </a>
 
     <div class="flex items-center gap-6 sm:gap-8">
@@ -39,10 +40,11 @@ const switchLangPath =
 
       <a
         href={switchLangPath}
-        class="flex items-center justify-center px-3 py-1.5 text-xs sm:text-sm font-semibold text-gray-700 bg-gray-50 border border-gray-200 rounded-full shadow-sm hover:bg-gray-100 hover:text-blue-600 transition-all active:scale-95"
+        class="flex items-center justify-center px-3 py-1.5 text-xs sm:text-sm  text-green-cancun bg-transparent rounded-full hover:text-green-cancun/75 transition-all active:scale-95"
         title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
       >
-        {lang === "es" ? "🇺🇸 EN" : "🇲🇽 ES"}
+          <Globe class="w-4 h-4 mr-1" />
+          {lang === "es" ? "EN" : "ES"}
       </a>
 
     </div>

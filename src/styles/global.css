@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+
+
+@theme {
+    --color-blue-cancun: #003089;
+    --color-red-cancun:  #BB0012;
+    --color-gray-cancun: #F3F3F3;
+    --color-white-cancun: #ffff;
+    --color-black-cancun: #0e0e10;
+    --color-black-cancun: #0e0e10;
+    --color-green-cancun: #148d14;
+    --color-yellow-cancun: #F9C80E;
+    --color-orange-cancun: #F86624;
+
+    --font-sans: "Manrope", ui-sans-serif, system-ui;
+    --font-manrope: "Manrope", sans-serif;
+    --font-alexandria: "Alexandria", ui-sans-serif, system-ui, sans-serif;
+}

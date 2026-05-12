@@ -1,0 +1,44 @@
+---
+import type { Lang } from '../../i18n/config.i18n';
+import content from '../../data/site-home-content.json';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const data = content[lang];
+---
+
+<div class="relative w-full h-screen flex items-center justify-center">
+    
+    <video 
+        class="absolute top-0 left-0 w-full h-full object-cover "
+        autoplay 
+        loop 
+        muted 
+        playsinline
+    >
+        <source src="/img/hero/playa.mp4" type="video/mp4" />
+    </video>
+
+    
+    <div class="relative z-10 text-center px-6 grid grid-cols-1 md:grid-cols-2 w-full h-full py-20">
+        <div class="flex flex-col justify-end md:justify-center items-center px-0 md:px-20 h-full">
+            <div>
+                <h1 class="text-6xl xl:text-7xl  text-start font-bold text-white mb-4 text-shadow-2xs">{data.hero.title}</h1>
+                <p class="text-6xl xl:text-7xl  font-bold text-yellow-cancun text-start text-shadow-2xs">{data.hero.subtitle}</p>
+            </div>
+        </div>
+        <div class="flex flex-row justify-end md:justify-start items-center rounded-lg"> 
+            <div class="flex justify-end items-end h-full">
+                <img src="/img/utils/Cancun-hielera.png" class="w-80 md:w-50 flex justify-end items-start" alt="Hielera">
+            </div>
+            <div class="flex justify-end items-end h-full">
+                <img src="/img/utils/coco.png" class="w-150 md:w-80" alt="Coco">
+            </div>
+        </div>
+    </div>
+
+</div>

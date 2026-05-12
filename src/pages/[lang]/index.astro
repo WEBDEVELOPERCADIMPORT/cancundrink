@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import content from '../../data/site-content.json';
 import type { Lang } from '../../i18n/config.i18n';
+import Hero from '../../components/home/Hero.astro';
 
 const lang = Astro.params.lang as Lang;
 const data = content[lang];
@@ -12,7 +13,10 @@ if (!(lang in content)) {
 ---
 
 <Layout title={data.brandName} lang={lang}>
-    <main class="min-h-screen flex flex-col items-center justify-center relative p-6">
+
+    <Hero lang={lang} />
+
+    <div class="min-h-screen flex flex-col items-center justify-center relative p-6">
         
         <div class="relative group mb-20">
             <div class="absolute inset-0 bg-gradient-to-r from-[#21D4ED] to-[#AF25FD] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 rounded-full"></div>
