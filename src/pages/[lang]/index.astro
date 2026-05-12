@@ -29,6 +29,7 @@ const { data: reviews, error } = await Astro.callAction(actions.getReviews, {});
     <AboutKoko lang={lang} />
     <Categories lang={lang} />
     <Reviews lang={lang} reviews={reviews?.data || null} />
+
     <div class="min-h-screen flex flex-col items-center justify-center relative p-6">
         
         <div class="relative group mb-20">
