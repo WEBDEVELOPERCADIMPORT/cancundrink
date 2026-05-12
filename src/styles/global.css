@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-
+@plugin "tailwindcss-animate";
 
 @theme {
     --color-blue-cancun: #003089;
     --color-red-cancun:  #BB0012;
-    --color-gray-cancun: #F3F3F3;
+    --color-gray-cancun: #F9F9F9;
     --color-white-cancun: #ffff;
     --color-black-cancun: #0e0e10;
     --color-black-cancun: #0e0e10;

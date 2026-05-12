@@ -4,6 +4,26 @@
             "hero": {
                   "title": "Refresca Tu",
                   "subtitle": "Espiritu"
+            },
+            "skills": {
+                  "title": "Pureza Tropical",
+                  "skills": [
+                        {
+                              "title": "Ingredientes Naturales",
+                              "description": "Utilizamos solo los ingredientes más frescos y naturales para crear nuestras bebidas, garantizando un sabor auténtico y delicioso.",
+                              "icon": "hoja"
+                        },
+                        {
+                              "title": "Recetas Exclusivas",
+                              "description": "Nuestras recetas son únicas y cuidadosamente elaboradas para ofrecer una experiencia de sabor inigualable en cada sorbo.",
+                              "icon": "receta"
+                        },
+                        {
+                              "title": "Compromiso con la Calidad",
+                              "description": "Nos comprometemos a mantener los más altos estándares de calidad en cada etapa de producción, desde la selección de ingredientes hasta el producto final.",
+                              "icon": "calidad"
+                        }
+                  ]
             }
       },
       "en": {
@@ -11,6 +31,26 @@
             "hero": {
                   "title": "Refresh Your",
                   "subtitle": "Spirit"
+            },
+            "skills": {
+                  "title": "Tropical Purity",
+                  "skills": [
+                        {
+                              "title": "Natural Ingredients",
+                              "description": "We use only the freshest and most natural ingredients to create our drinks, ensuring an authentic and delicious taste.",
+                              "icon": "hoja"
+                        },
+                        {
+                              "title": "Exclusive Recipes",
+                              "description": "Our recipes are unique and carefully crafted to provide an unparalleled taste experience with every sip.",
+                              "icon": "receta"
+                        },
+                        {
+                              "title": "Commitment to Quality",
+                              "description": "We are committed to maintaining the highest quality standards at every stage of production, from ingredient selection to the final product.",
+                              "icon": "calidad"
+                        }
+                  ]
             }
       }
 }

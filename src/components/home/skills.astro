@@ -1,0 +1,39 @@
+---
+import type { Lang } from '../../i18n/config.i18n';
+import content from '../../data/site-home-content.json';
+import { TreePalm  } from 'lucide-astro'
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const data = content[lang].skills;
+---
+
+<section class="w-full flex-col justify-center px-5 py-20 bg-gray-cancun">
+    
+    <header class="text-center flex justify-center items-start">
+        <h2 class="font-bold text-4xl text-center">{data.title}</h2>
+    </header>
+
+    <article class="w-full mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+                data.skills.map((skill) => {
+                    return (
+                        <div class="flex flex-col items-center text-center p-10 py-10 border border-white-cancun bg-white-cancun rounded-lg animate-in fade-in slide-in-from-left-10 duration-900 hover:transform hover:scale-102 transition-transform hover:shadow-2xs">
+                            <header class="p-5 shadow-2xl rounded-full mb-3">
+                                <TreePalm class="w-12 h-12 text-green-cancun" />
+                            </header>               
+                            <h3 class="font-semibold text-xl mb-2">{skill.title}</h3>
+                            <p class="text-gray-500">{skill.description}</p>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </article>
+
+</section>
