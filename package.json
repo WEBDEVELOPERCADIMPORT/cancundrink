@@ -16,6 +16,7 @@
     "@astrojs/cloudflare": "^13.1.9",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.2",
+    "aos": "^2.3.4",
     "astro": "^6.1.6",
     "lucide-astro": "^0.556.0",
     "sitemap": "^9.0.1",
@@ -23,6 +24,7 @@
     "wrangler": "^4.82.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.8",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss-animate": "^1.0.7"
   },

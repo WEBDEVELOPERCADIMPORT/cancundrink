@@ -1,6 +1,6 @@
 ---
-import type { Lang } from '../../i18n/config.i18n';
-import content from '../../data/site-home-content.json';
+import type { Lang } from '../../../i18n/config.i18n';
+import content from '../../../data/site-home-content.json';
 
 interface Props {
     lang: Lang;
@@ -26,19 +26,53 @@ const data = content[lang].hero;
     
     <div class="relative z-10 text-center px-6 grid grid-cols-1 md:grid-cols-2 w-full h-full py-20">
         <div class="flex flex-col justify-end md:justify-center items-center px-0 md:px-20 h-full">
-            <div class="animate-in fade-in slide-in-from-left-5 duration-900">
+            <div 
+            data-aos="fade-right"
+            data-aos-delay="200"
+            class="">
                 <h1 class="text-6xl xl:text-7xl  text-start font-bold text-white mb-4 text-shadow-2xs">{data.title}</h1>
                 <p class="text-6xl xl:text-7xl  font-bold text-yellow-cancun text-start text-shadow-2xs">{data.subtitle}</p>
             </div>
         </div>
         <div class="flex flex-row justify-end md:justify-start items-center rounded-lg"> 
             <div class="flex justify-end items-end h-full">
-                <img src="/img/utils/Cancun-hielera.png" class="w-80 md:w-50 flex justify-end items-start animate-in fade-in slide-in-from-botton-5 duration-500" alt="Hielera">
+                <img id="hieledera" src="/img/utils/Cancun-hielera.png" data-aos="fade-left" data-aos-delay="500" class="w-80 md:w-50 flex justify-end items-start" alt="Hielera">
             </div>
             <div class="flex justify-end items-end h-full">
-                <img src="/img/utils/coco.png" class="w-150 md:w-80 animate-in fade-in slide-in-from-botton-5 duration-900" alt="Coco">
+                <img id="koko-hero" src="/img/utils/coco.png" data-aos="fade-left" data-aos-delay="200" class="w-150 md:w-80" alt="Koko">
             </div>
         </div>
     </div>
 
 </section>
+
+<style>
+    #koko-hero {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    #hieledera {
+        animation: rotate 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.15);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(-16deg);
+        }
+        50% {            
+            transform: rotate(16deg);
+        },
+        80% {
+            transform: rotate(-16deg);
+        }
+    }
+</style>
