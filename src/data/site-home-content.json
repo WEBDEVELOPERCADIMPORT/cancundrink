@@ -24,6 +24,40 @@
                               "icon": "calidad"
                         }
                   ]
+            },
+            "about": {
+                  "title": "Conoce a",
+                  "subtitle": "Koko",
+                  "description": "Koko es el alma de Cancundrink, una marca que nació con la misión de llevar la frescura y el espíritu tropical a cada sorbo. Inspirados en la belleza y vitalidad de Cancún, creamos bebidas que capturan la esencia de este paraíso, utilizando ingredientes naturales y recetas exclusivas para ofrecer una experiencia única y refrescante."
+            },
+            "categories": {
+                  "title": "Explora Nuestros productos",
+                  "categories": [
+                        {
+                              "title": "Agua de Coco y Mango",
+                              "slug": "agua-coco-y-mango",
+                              "description": "Descubre nuestra variedad de bebidas refrescantes, perfectas para disfrutar en cualquier momento del día y llevar el sabor de Cancún a tu paladar.",
+                              "img": "/img/utils/categories/agua-coco-y-mango.jpg"
+                        },    
+                        {
+                              "title": "Leches de Coco",
+                              "slug": "leches-coco",
+                              "description": "Prueba nuestros cócteles exclusivos, elaborados con ingredientes naturales y recetas únicas que te transportarán a la playa con cada sorbo.",
+                              "img": "/img/utils/categories/leches-de-coco.jpg"
+                        },
+                        {
+                              "title": "Jugos de Frutas",
+                              "slug": "jugos-frutas",
+                              "description": "Prueba nuestros jugos de frutas naturales, elaborados con ingredientes frescos y recetas únicas que te transportarán a la playa con cada sorbo.",
+                              "img": "/img/utils/categories/jugos-de-frutas.jpg"
+                        },
+                        {
+                              "title": "Jugos de Aloe",
+                              "slug": "jugos-aloe",
+                              "description": "Prueba nuestros jugos de aloe vera, elaborados con ingredientes frescos y recetas únicas que te transportarán a la playa con cada sorbo.",
+                              "img": "/img/utils/categories/jugos-aloe.jpg"
+                        }
+                  ]
             }
       },
       "en": {
@@ -49,6 +83,40 @@
                               "title": "Commitment to Quality",
                               "description": "We are committed to maintaining the highest quality standards at every stage of production, from ingredient selection to the final product.",
                               "icon": "calidad"
+                        }
+                  ]
+            },
+            "about": {
+                  "title": "Meet",
+                  "subtitle": "Koko",
+                  "description": "Koko is the soul of Cancundrink, a brand born with the mission of bringing freshness and tropical spirit to every sip. Inspired by the beauty and vitality of Cancún, we create drinks that capture the essence of this paradise, using natural ingredients and exclusive recipes to offer a unique and refreshing experience."
+            },
+            "categories": {
+                  "title": "Explore Our Products",
+                  "categories": [
+                        {
+                              "title": "Coconut and Mango Water",
+                              "slug": "coconut-and-mango-water",
+                              "description": "Discover our variety of refreshing drinks, perfect for enjoying at any time of the day and bringing the taste of Cancún to your palate.",
+                              "img": "/img/utils/categories/agua-coco-y-mango.jpg"
+                        },    
+                        {
+                              "title": "Coconut Milks",
+                              "slug": "coconut-milks",
+                              "description": "Try our exclusive cocktails, made with natural ingredients and unique recipes that will transport you to the beach with every sip.",
+                              "img": "/img/utils/categories/leches-de-coco.jpg"
+                        },
+                        {
+                              "title": "Fruit Juices",
+                              "slug": "fruit-juices",
+                              "description": "Try our natural fruit juices, made with fresh ingredients and unique recipes that will transport you to the beach with every sip.",
+                              "img": "/img/utils/categories/jugos-de-frutas.jpg"
+                        },
+                        {
+                              "title": "Aloe Juices",
+                              "slug": "aloe-juices",
+                              "description": "Try our aloe vera juices, made with fresh ingredients and unique recipes that will transport you to the beach with every sip.",
+                              "img": "/img/utils/categories/jugos-aloe.jpg"
                         }
                   ]
             }

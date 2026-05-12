@@ -6,9 +6,12 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="w-full border-t border-gray-100 bg-white py-8 px-6 mt-10">
-  <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
-    <p class="text-sm font-medium text-gray-500 text-center">
+<footer class="w-full border-t border-white-cancun bg-black-cancun py-8 px-6 mt-10">
+  <div class="max-w-7xl mx-auto flex flex-col items-start justify-center w-full">
+    <img src="/logo_cancun.png" class="w-30" alt="">
+  </div>
+  <div>
+    <p class="text-start text-sm text-gray-500 mt-4">
       {t.footer.rights}
     </p>
   </div>

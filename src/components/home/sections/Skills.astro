@@ -10,10 +10,9 @@ interface Props {
 const { lang } = Astro.props;
 
 const data = content[lang].skills;
-import 'aos/dist/aos.css';
 ---
 
-<section class="w-full flex-col justify-center px-5 py-20 bg-gray-cancun">
+<section id="skills" class="w-full flex-col justify-center px-5 py-20 bg-gray-cancun">
     
     <header class="text-center flex justify-center items-start">
         <h2 class="font-bold text-4xl text-center">{data.title}</h2>
