@@ -58,6 +58,9 @@
                               "img": "/img/utils/categories/jugos-aloe.jpg"
                         }
                   ]
+            },
+            "reviews": {
+                  "title": "Lo Que Dicen Los Viajeros"
             }
       },
       "en": {
@@ -119,6 +122,9 @@
                               "img": "/img/utils/categories/jugos-aloe.jpg"
                         }
                   ]
+            },
+            "reviews": {
+                  "title": "What Travelers Say"
             }
       }
 }

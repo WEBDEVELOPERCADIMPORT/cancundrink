@@ -1,0 +1,20 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import content from '../../../data/site-home-content.json';
+import ReviewsComponent, { type Review } from '../../common/Reviews.astro';
+
+interface Props {
+    lang: Lang;
+    reviews: Review[] | null;
+}
+
+const { lang, reviews } = Astro.props;
+
+const data = content[lang].reviews;
+---
+
+<section id="reviews" class="w-full flex-col justify-center px-5 py-20 bg-gray-cancun">
+
+    <ReviewsComponent title={data.title} reviews={reviews} />
+
+</section>
