@@ -17,8 +17,10 @@ import 'aos/dist/aos.css';
 import Categories from '../../components/home/sections/Categories.astro';
 import Reviews from '../../components/home/sections/Reviews.astro';
 import { actions } from 'astro:actions';
+import Places from '../../components/home/sections/Places.astro';
 
-const { data: reviews, error } = await Astro.callAction(actions.getReviews, {});
+const { data: reviews, error: errorReviews } = await Astro.callAction(actions.getReviews, {});
+const { data: places, error: errorPlaces } = await Astro.callAction(actions.getPlaces, {});
 ---
 
 <Layout title={data.brandName} lang={lang}>
@@ -29,7 +31,7 @@ const { data: reviews, error } = await Astro.callAction(actions.getReviews, {});
     <AboutKoko lang={lang} />
     <Categories lang={lang} />
     <Reviews lang={lang} reviews={reviews?.data || null} />
-
+    <Places lang={lang} places={places?.data || null} />
     <div class="min-h-screen flex flex-col items-center justify-center relative p-6">
         
         <div class="relative group mb-20">

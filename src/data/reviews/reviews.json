@@ -4,7 +4,7 @@
             "id": 1,
             "name": "John Doe",
             "comment": "I absolutely love Cancundrink! The flavors are so refreshing and perfect for a hot day. I especially enjoy the coconut and mango water, it's like a tropical vacation in a bottle!",
-            "rating": 5,
+            "rating": 2,
             "date": "2024-06-15"
         },
         {
@@ -18,7 +18,7 @@
             "id": 3,
             "name": "Emily Johnson",
             "comment": "I was pleasantly surprised by the quality of Cancundrink. The commitment to using natural ingredients really shines through in the taste. The aloe juices are my favorite, they have a nice balance of flavor and hydration.",
-            "rating": 5,
+            "rating": 3,
             "date": "2024-06-05"
         },
         {
