@@ -1,0 +1,82 @@
+---
+const { autoOpen = true, delay = 1000 } = Astro.props;
+---
+
+<dialog 
+  id="announcement-modal" 
+  class="m-auto w-[90%] border-none bg-white p-0 shadow-2xl backdrop:bg-slate-900/60 backdrop:backdrop-blur-sm" 
+  data-autoopen={autoOpen} 
+  data-delay={delay}
+>
+  <!-- Quitamos el padding general de este div -->
+  <div class="relative flex flex-col text-center">
+    
+    <!-- BARRA SUPERIOR DEDICADA -->
+    <div class="flex justify-end p-2">
+      <button 
+        id="close-modal" 
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors duration-200 hover:bg-gray-100 hover:text-black" 
+        aria-label="Cerrar anuncio"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- CONTENIDO DEL ANUNCIO -->
+    <!-- Le damos su propio padding para separarlo de los bordes y del botón -->
+    <div class="px-4 pb-4 sm:px-8 sm:pb-8 font-sans text-gray-700">
+      <slot /> 
+    </div>
+    
+  </div>
+</dialog>
+
+<script>
+  // Lógica del cliente
+  function setupModal() {
+    const modal = document.getElementById('announcement-modal') as HTMLDialogElement;
+    const closeBtn = document.getElementById('close-modal');
+
+    if (!modal || !closeBtn) return;
+
+    // Leer propiedades pasadas desde Astro
+    const autoOpen = modal.dataset.autoopen === 'true';
+    const delay = parseInt(modal.dataset.delay || '1000');
+
+    // Lógica para abrir como anuncio después de X tiempo
+    if (autoOpen) {
+      setTimeout(() => {
+        if (!modal.open) modal.showModal(); // showModal() centra y bloquea el fondo
+      }, delay);
+    }
+
+    // Lógica para cerrar
+    closeBtn.addEventListener('click', () => {
+      modal.close();
+    });
+
+    // Cerrar si el usuario hace clic fuera del modal (en el backdrop)
+    modal.addEventListener('click', (e) => {
+      const dialogDimensions = modal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        modal.close();
+      }
+    });
+  }
+
+  // Ejecutar al cargar la página (compatible con View Transitions de Astro)
+  document.addEventListener('astro:page-load', setupModal);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupModal);
+  } else {
+    setupModal();
+  }
+</script>

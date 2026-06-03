@@ -1,0 +1,43 @@
+---
+import Modal from "../ui/Modal.astro";
+
+---
+
+
+<Modal delay="10" autoOpen={true}>
+
+    <div class="justify-center flex col max items-center relative  flex-col ">
+        <div class=" relative flex w-full">
+            <img class="w-full hidden xl:block" src="/img/mundial/pcBanner.png" alt="Logo Flotante" class="relative w-48 h-48 md:w-64 md:h-64 object-contain animate-float" />
+            <img class="w-full block xl:hidden" src="/img/mundial/movilBanner.png" alt="Logo Flotante" class="relative w-48 h-48 md:w-64 md:h-64 object-contain animate-float" />
+        </div>
+
+        <div class="w-full">
+            <div class="w-full bg-red-600 p-2">
+                <p class="text-white text-sm xl:text-lg">
+                    PS5 ®  CUPON POR $25 DENTRO DE LA TIENDA, JERSEY’S  Y MUCHOS PRODUCTOS MAS
+                </p>
+            </div>
+            <div class="w-full bg-white p-2 ">
+                <p class="flex gap-2 justify-center text-sm xl:text-lg">
+                    <strong class="text-black">VIGENCIA DE LA PROMOCIÓN:</strong>
+                    DEL 11 DE JUNIO AL 19 DE JULIO DE 2026.
+                </p>
+                <p class="flex gap-2 justify-center text-sm xl:text-lg">
+                    <strong class="text-black">SORTEOS SEMANALES: </strong>
+                        LOS FINES DE SEMANAS
+                </p>
+                <p class="flex gap-2 justify-center text-sm xl:text-lg">
+                    <strong class="text-black">SORTEOS PS5®: </strong>
+                    19 DE JULIO
+                </p>
+            </div>
+            <div class="w-full bg-black p-2">
+                <p class="text-white text-sm">
+                    Promición válida del 11/06/26 al 19/07/26 en tiendas Savemart participantes. Consolas  de forma independiente. PS5® es una marca registrada de Sony Interactive Enterlainment; esta promoción  no está patrocinada ni asociada  a dicha marca ni los organizadores oficiales torneo  fútbol mundial
+                </p>
+            </div>
+        </div>
+    </div>
+
+</Modal>
