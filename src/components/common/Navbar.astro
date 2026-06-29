@@ -14,39 +14,129 @@ const switchLangPath =
     : currentPath.replace("/en", "/es");
 ---
 
-<nav class="sticky top-0 z-50 w-full px-6 py-4 bg-white-cancun  backdrop-blur-md border-b border-gray-100">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
+<header class="sticky top-0 z-40 w-full bg-white-cancun/90 backdrop-blur-md border-b border-gray-100 font-manrope">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     
-    <a href={`/${lang}/`} class="flex items-center gap-2 transition hover:opacity-80">
-      <img src="/logo_cancun.png" class="w-auto h-10 object-contain" alt="Logo del sitio" />
+    <div class="flex-1 hidden sm:block"></div>
+
+    <a href={`/${lang}/`} class="flex-shrink-0 transition hover:opacity-80 mx-auto sm:mx-0">
+      <img src="/logo_cancun.png" class="w-auto h-14 sm:h-15 object-contain" alt="Logo del sitio" />
     </a>
 
-    <div class="flex items-center gap-6 sm:gap-8">
+    <div class="flex-1 flex justify-end items-center gap-4 sm:gap-6">
       
-      <ul class="flex items-center gap-6 text-sm font-medium text-gray-600">
-        <li>
-          <a href={`/${lang}/`} class="hover:text-blue-600 transition-colors">
-            {t.nav.home}
-          </a>
-        </li>
-        <li>
-          <a href={`/${lang}/#about`} class="hover:text-blue-600 transition-colors">
-            {t.nav.about}
-          </a>
-        </li>
-      </ul>
-
-      <div class="hidden sm:block w-px h-5 bg-gray-200"></div>
-
       <a
         href={switchLangPath}
-        class="flex items-center justify-center px-3 py-1.5 text-xs sm:text-sm  text-green-cancun bg-transparent rounded-full hover:text-green-cancun/75 transition-all active:scale-95"
+        class="flex items-center justify-center px-3 py-1.5 text-xs sm:text-sm text-green-cancun bg-transparent rounded-full hover:text-green-cancun/75 transition-all active:scale-95"
         title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
       >
           <Globe class="w-4 h-4 mr-1" />
           {lang === "es" ? "EN" : "ES"}
       </a>
 
+      <div class="w-px h-5 bg-gray-200"></div>
+
+      <button 
+          id="open-sidebar-btn" 
+          class="p-2 -mr-2 text-black-cancun hover:text-red-cancun transition-colors focus:outline-none"
+          aria-label="Abrir menú"
+      >
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+      </button>
+
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<div 
+    id="sidebar-backdrop" 
+    class="fixed inset-0 bg-black-cancun/40 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"
+></div>
+
+<aside 
+    id="sidebar" 
+    class="fixed top-0 right-0 h-[100dvh] w-72 sm:w-80 bg-white-cancun shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-manrope"
+>
+    <div class="flex justify-between items-center p-6 border-b border-gray-100">
+        <span class="font-bold text-gray-400 text-sm tracking-widest uppercase border-b-2 border-red-cancun pb-1">Menú</span>
+        <button 
+            id="close-sidebar-btn" 
+            class="p-2 -mr-2 text-gray-500 hover:text-red-cancun transition-colors focus:outline-none bg-gray-50 rounded-full"
+            aria-label="Cerrar menú"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="flex-1 px-6 py-8 overflow-y-auto">
+        <ul class="flex flex-col gap-6 text-2xl font-extrabold text-black-cancun">
+            <li>
+                <a href={`/${lang}/`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.home}
+                </a>
+            </li>
+            <li>
+                <a href={`/${lang}/#about`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.about}
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="p-6 text-sm text-gray-400 border-t border-gray-100 bg-gray-50/50">
+        <p>{t.footer.rights}</p>
+    </div>
+</aside>
+
+<script>
+    const openBtn = document.getElementById('open-sidebar-btn');
+    const closeBtn = document.getElementById('close-sidebar-btn');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+
+    function openSidebar() {
+        if (!sidebar || !backdrop) return;
+        
+        backdrop.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            sidebar.classList.remove('translate-x-full');
+        });
+        
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !backdrop) return;
+        
+        sidebar.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0');
+        
+        setTimeout(() => {
+            backdrop.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300); 
+    }
+
+    // Event Listeners
+    openBtn?.addEventListener('click', openSidebar);
+    closeBtn?.addEventListener('click', closeSidebar);
+    backdrop?.addEventListener('click', closeSidebar);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeSidebar();
+    });
+
+    // Cerrar sidebar al hacer clic en un enlace (útil para enlaces tipo "ancla" como #about)
+    const sidebarLinks = sidebar?.querySelectorAll('a');
+    sidebarLinks?.forEach(link => {
+        link.addEventListener('click', closeSidebar);
+    });
+</script>

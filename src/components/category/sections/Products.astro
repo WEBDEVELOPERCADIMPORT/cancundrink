@@ -1,0 +1,74 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import content from '../../../data/site-categories-content.json';
+import { TreePalm  } from 'lucide-astro'
+
+export interface Product {
+    name: string;
+    slug: string;
+    sku: string;
+    categories: string[];
+    image: string;
+}
+
+interface Props {
+    lang: Lang;
+    products: Product[] | null;
+}
+
+const { lang } = Astro.props;
+const { products } = Astro.props;
+
+const data = content[lang].products;
+---
+
+<section id="products" class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto">
+    
+    <header class="w-full mb-8">
+        <h2 class="font-bold text-3xl md:text-4xl text-left text-neutral-800">{data.title}</h2>
+    </header>
+
+    <article class="w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
+            {
+                products?.map((product, index) => {
+                    return (
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay={200 + index * 100}
+                            class="bg-white p-5 rounded-2xl  border border-gray-100 flex flex-col justify-between items-center text-center transition-all duration-300 "
+                        >
+                            <div class="w-full h-80 flex items-center justify-center mb-4 overflow-hidden rounded-2xl">
+                                <img 
+                                    src={product.image} 
+                                    class="max-h-full object-contain hover:scale-105 transition-transform duration-300" 
+                                    alt={product.name}
+                                >
+                            </div>
+
+                            <div class="w-full flex-grow flex flex-col justify-start mb-6">
+                                <h3 class="font-bold text-base text-neutral-800 line-clamp-2">{product.name}</h3>
+                            </div>
+
+                            <div class="w-full flex flex-col gap-2 mt-auto">
+                                <a 
+                                    href="#" 
+                                    class="w-full py-2.5 px-4 bg-[#E50012] hover:bg-red-700 text-white font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
+                                >
+                                    Comprar en Amazon
+                                </a>
+                                <a 
+                                    href="#" 
+                                    class="w-full py-2.5 px-4 bg-[#FFCC00] hover:bg-yellow-500 text-neutral-900 font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
+                                >
+                                    Buscar tienda
+                                </a>
+                            </div>              
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </article>
+
+</section>

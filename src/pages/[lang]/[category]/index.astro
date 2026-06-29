@@ -1,0 +1,37 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import content from '../../../data/site-categories-content.json';
+import type { Lang } from '../../../i18n/config.i18n';
+import Questions from '../../../components/home/sections/Questions.astro';
+import HeroCategory from '../../../components/category/sections/HeroCategory.astro';
+
+const lang = Astro.params.lang as Lang;
+const category = Astro.params.category as string;
+const data = content[lang].categories.categories.find(c => c.slugs.includes(category));
+
+if (!(lang in content)) {
+    return Astro.redirect('/404');
+}
+import 'aos/dist/aos.css';
+import { actions } from 'astro:actions';
+import Products from '../../../components/category/sections/Products.astro';
+
+const { data: products, error: errorProducts } = await Astro.callAction(actions.getProductsForCategory, { category });
+---
+<Layout title={data?.title || category} lang={lang}>
+    <HeroCategory lang={lang} category={category} />
+    <Products lang={lang} products={products?.data || null} />
+    <Questions lang={lang} />
+</Layout>
+
+
+<script>
+    import AOS from 'aos';
+    
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+    });
+    
+</script>

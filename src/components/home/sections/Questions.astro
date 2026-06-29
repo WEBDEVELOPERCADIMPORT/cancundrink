@@ -1,0 +1,60 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import content from '../../../data/site-home-content.json';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const data = content[lang].questions;
+
+const titleParts = data.title.split(' ');
+const firstWord = titleParts[0];
+const restOfTitle = titleParts.slice(1).join(' ');
+---
+
+<section id="questions" class="w-full bg-gray-cancun py-20 px-5 font-manrope">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
+        
+        <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
+            
+            <header class="mb-10 lg:mb-16">
+                <h2 class="font-extrabold text-5xl lg:text-6xl tracking-tight flex flex-col gap-2">
+                    <span class="text-black-cancun">{firstWord}</span>
+                    <span class="text-red-cancun">{restOfTitle}</span>
+                </h2>
+            </header>
+
+            <div class="relative w-full max-w-xs mx-auto lg:mx-0">
+                <img 
+                    src="/img/utils/koko_pelotas_playa.png" 
+                    alt="Koko Mascota Cancún Drink" 
+                    class="w-full h-auto object-contain drop-shadow-xl"
+                />
+            </div>
+            
+        </div>
+
+        <article class="w-full lg:w-2/3 flex flex-col gap-5 mt-10 lg:mt-0">
+            {data.questions.map((item) => (
+                <details class="group bg-white-cancun rounded-2xl shadow-sm border border-gray-100 overflow-hidden cursor-pointer">
+                    <summary class="flex justify-between items-center p-6 lg:p-5 font-bold text-lg lg:text-lg text-black-cancun list-none [&::-webkit-details-marker]:hidden">
+                        {item.question}
+                        <span class="transition duration-300 group-open:-rotate-180 text-gray-400">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </summary>
+                    
+                    <div class="px-6 lg:px-8 pb-6 lg:pb-8 text-gray-600 font-medium">
+                        <p class="leading-relaxed">{item.answer}</p>
+                    </div>
+                </details>
+            ))}
+        </article>
+
+    </div>
+</section>

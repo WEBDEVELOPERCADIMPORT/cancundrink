@@ -1,0 +1,115 @@
+{
+      "es": {
+            "brandName": " | CANCUN DRINK",
+            "categories": {
+                  "title": "Categorías",
+                  "categories": [
+                        {
+                              "title": "Agua de Coco y Mango",
+                              "description": "Explora nuestra variedad de bebidas refrescantes y deliciosas.",
+                              "slugs": ["agua-coco-y-mango", "coconut-and-mango-water"],
+                              "image_pc": "/img/utils/category-page/coconut-and-mango-water_pc.png",
+                              "image_mobile": "/img/utils/category-page/coconut-and-mango-water_mobile.jpg"
+                        },
+                        {
+                              "title": "Leches de Coco",
+                              "description": "Descubre nuestras leches de coco perfectas para acompañar tus bebidas.",
+                              "slugs": ["leches-coco", "coconut-milks"],
+                              "image_pc": "/img/utils/category-page/coconut-milks_pc.png",
+                              "image_mobile": "/img/utils/category-page/coconut-milks_mobile.jpg"
+                        },
+                        {
+                              "title": "Jugos de Frutas",
+                              "description": "Disfruta de nuestros jugos de frutas frescas y naturales.",
+                              "slugs": ["jugos-frutas", "fruit-juices"],
+                              "image_pc": "/img/utils/category-page/fruit-juices_pc.png",
+                              "image_mobile": "/img/utils/category-page/fruit-juices_mobile.jpg"
+                        },
+                        {
+                              "title": "Jugos de Aloe",
+                              "description": "Disfruta de nuestros jugos de aloe frescos y naturales.",
+                              "slugs": ["jugos-aloe", "aloe-juices"],
+                              "image_pc": "/img/utils/category-page/aloe-juices_pc.png",
+                              "image_mobile": "/img/utils/category-page/aloe-juices_mobile.jpg"
+                        }
+                  ]
+            },
+            "products": {
+                  "title": "Explora el Paraíso",
+                  "description": "Descubre nuestra amplia gama de bebidas refrescantes y deliciosas."
+            },
+            "questions": {
+                  "title": "Preguntas Frecuentes",
+                  "questions": [
+                        {
+                              "question": "¿Dónde puedo comprar Cancún Drink?",
+                              "answer": "Puedes encontrar Cancún Drink en tiendas locales, supermercados y en nuestra tienda en línea. Consulta nuestro localizador de tiendas para encontrar la más cercana."
+                        },
+                        {
+                              "question": "¿Qué ingredientes se utilizan en las bebidas?",
+                              "answer": "Nuestras bebidas están elaboradas con ingredientes naturales, incluyendo frutas frescas, agua de coco y aloe vera, sin aditivos artificiales."
+                        },
+                        {
+                              "question": "¿Ofrecen opciones sin azúcar?",
+                              "answer": "Sí, ofrecemos algunas opciones de bebidas sin azúcar añadida. Consulta nuestras etiquetas de productos para más información."
+                        }
+                  ]
+            }
+      },
+      "en": {
+            "brandName": " | CANCUN DRINK",
+            "categories": {
+                  "title": "Categories",
+                  "categories": [
+                        {
+                              "title": "Coconut and Mango Water",
+                              "description": "Explore our variety of refreshing and delicious drinks.",
+                              "slugs": ["agua-de-coco-y-mango", "coconut-and-mango-water"],
+                              "image_pc": "/img/utils/category-page/coconut-and-mango-water_pc.png",
+                              "image_mobile": "/img/utils/category-page/coconut-and-mango-water_mobile.jpg"
+                        },
+                        {
+                              "title": "Coconut Milks",
+                              "description": "Discover our coconut milks perfect for accompanying your drinks.",
+                              "slugs": ["leches-de-coco", "coconut-milks"],
+                              "image_pc": "/img/utils/category-page/coconut-milks_pc.png",
+                              "image_mobile": "/img/utils/category-page/coconut-milks_mobile.jpg"
+                        },
+                        {
+                              "title": "Fruit Juices",
+                              "description": "Enjoy our fresh and natural fruit juices.",
+                              "slugs": ["jugos-de-frutas", "fruit-juices"],
+                              "image_pc": "/img/utils/category-page/fruit-juices_pc.png",
+                              "image_mobile": "/img/utils/category-page/fruit-juices_mobile.jpg"
+                        },
+                        {
+                              "title": "Aloe Juices",
+                              "description": "Enjoy our fresh and natural aloe juices.",
+                              "slugs": ["jugos-de-aloe", "aloe-juices"],
+                              "image_pc": "/img/utils/category-page/aloe-juices_pc.png",
+                              "image_mobile": "/img/utils/category-page/aloe-juices_mobile.jpg"
+                        }
+                  ]
+            },
+            "products": {
+                  "title": "Explore Paradise"
+            },
+            "questions": {
+                  "title": "Frequently Asked Questions",
+                  "questions": [
+                        {
+                              "question": "Where can I buy Cancún Drink?",
+                              "answer": "You can find Cancún Drink in local stores, supermarkets, and on our online store. Check our store locator to find the nearest one."
+                        },
+                        {
+                              "question": "What ingredients are used in the drinks?",
+                              "answer": "Our drinks are made with natural ingredients, including fresh fruits, coconut water, and aloe vera, without artificial additives."
+                        },
+                        {
+                              "question": "Do you offer sugar-free options?",
+                              "answer": "Yes, we offer some sugar-free drink options. Check our product labels for more information."
+                        }
+                  ]
+            }
+      }
+}

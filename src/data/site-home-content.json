@@ -75,6 +75,23 @@
                               "label": "BUSCAR"
                         }
                   }
+            },
+            "questions": {
+                  "title": "Preguntas Frecuentes",
+                  "questions": [
+                        {
+                              "question": "¿Dónde puedo comprar Cancún Drink?",
+                              "answer": "Puedes encontrar Cancún Drink en tiendas locales, supermercados y en nuestra tienda en línea. Consulta nuestro localizador de tiendas para encontrar la más cercana."
+                        },
+                        {
+                              "question": "¿Qué ingredientes se utilizan en las bebidas?",
+                              "answer": "Nuestras bebidas están elaboradas con ingredientes naturales, incluyendo frutas frescas, agua de coco y aloe vera, sin aditivos artificiales."
+                        },
+                        {
+                              "question": "¿Ofrecen opciones sin azúcar?",
+                              "answer": "Sí, ofrecemos algunas opciones de bebidas sin azúcar añadida. Consulta nuestras etiquetas de productos para más información."
+                        }
+                  ]
             }
       },
       "en": {
@@ -153,6 +170,23 @@
                               "label": "SEARCH"
                         }
                   }
+            },
+            "questions": {
+                  "title": "Frequently Asked Questions",
+                  "questions": [
+                        {
+                              "question": "Where can I buy Cancún Drink?",
+                              "answer": "You can find Cancún Drink in local stores, supermarkets, and on our online store. Check our store locator to find the nearest one."
+                        },
+                        {
+                              "question": "What ingredients are used in the drinks?",
+                              "answer": "Our drinks are made with natural ingredients, including fresh fruits, coconut water, and aloe vera, without artificial additives."
+                        },
+                        {
+                              "question": "Do you offer sugar-free options?",
+                              "answer": "Yes, we offer some sugar-free drink options. Check our product labels for more information."
+                        }
+                  ]
             }
       }
 }

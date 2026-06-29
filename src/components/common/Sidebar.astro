@@ -1,0 +1,108 @@
+---
+// Asegúrate de importar tus tipos y lógica de traducción según la estructura de tu proyecto
+import { getLangFromUrl, useTranslations } from '../../i18n/utils.i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<button 
+    id="open-sidebar-btn" 
+    class="p-2 text-black-cancun hover:text-red-cancun transition-colors focus:outline-none z-30 relative"
+    aria-label="Abrir menú"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</button>
+
+<div 
+    id="sidebar-backdrop" 
+    class="fixed inset-0 bg-black-cancun/50 z-40 hidden opacity-0 transition-opacity duration-300"
+></div>
+
+<aside 
+    id="sidebar" 
+    class="fixed top-0 right-0 h-full w-72 sm:w-80 bg-white-cancun shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-manrope"
+>
+    <div class="flex justify-end p-6 border-b border-gray-100">
+        <button 
+            id="close-sidebar-btn" 
+            class="p-2 text-gray-500 hover:text-red-cancun transition-colors focus:outline-none"
+            aria-label="Cerrar menú"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="flex-1 p-6 overflow-y-auto">
+        <ul class="flex flex-col gap-6 text-lg font-bold text-black-cancun">
+            <li>
+                <a href={`/${lang}/`} class="block hover:text-red-cancun transition-colors">
+                    {t.nav.home}
+                </a>
+            </li>
+            <li>
+                <a href={`/${lang}/#about`} class="block hover:text-red-cancun transition-colors">
+                    {t.nav.about}
+                </a>
+            </li>
+            </ul>
+    </nav>
+    
+    <div class="p-6 text-sm text-gray-400 border-t border-gray-100">
+        <p>{t.footer?.rights}</p>
+    </div>
+</aside>
+
+<script>
+    // Astro ejecuta este script en el cliente
+    const openBtn = document.getElementById('open-sidebar-btn');
+    const closeBtn = document.getElementById('close-sidebar-btn');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+
+    function openSidebar() {
+        if (!sidebar || !backdrop) return;
+        
+        // Mostrar fondo
+        backdrop.classList.remove('hidden');
+        // Pequeño delay para que la transición de opacidad funcione después del display block
+        requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            sidebar.classList.remove('translate-x-full');
+        });
+        
+        // Evitar scroll en el body
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !backdrop) return;
+        
+        // Ocultar sidebar
+        sidebar.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0');
+        
+        // Esperar a que termine la animación para ocultar el fondo completamente
+        setTimeout(() => {
+            backdrop.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300); // 300ms es la duración de nuestra clase duration-300
+    }
+
+    // Listeners
+    openBtn?.addEventListener('click', openSidebar);
+    closeBtn?.addEventListener('click', closeSidebar);
+    backdrop?.addEventListener('click', closeSidebar);
+
+    // Cerrar el sidebar con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeSidebar();
+    });
+</script>

@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Bebida de leche de coco cancún con nata de coco/fresa 280ml x 24",
+            "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-280ml-x-24",
+            "sku": "01-0328",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0328.png"
+        },
+        {
+            "id": 2,
+            "name": "Bebida de leche de coco cancún con nata de coco/fresa 470ml x 12",
+            "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-470ml-x-12",
+            "sku": "01-0271",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0271.png"
+        },
+        {
+            "id": 3,
+            "name": "Cancun coconut milk drink with nata de Coco/Mango 280ml x 24",
+            "slug": "cancun-coconut-milk-drink-with-nata-de-coco-mango-280ml-x-24",
+            "sku": "01-0329",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0329.png"
+        },
+        {
+            "id": 4,
+            "name": "Cancun coconut milk drink with nata de Coco/Mango 470ml x 12",
+            "slug": "cancun-coconut-milk-drink-with-nata-de-coco-mango-470ml-x-12",
+            "sku": "01-0270",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0270.png"
+        },
+        {
+            "id": 5,
+            "name": "Cancun coconut milk drink with nata de coco/original 280ml x 24",
+            "slug": "cancun-coconut-milk-drink-with-nata-de-coco-original-280ml-x-24",
+            "sku": "01-0327",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0327.png"
+        },
+        {
+            "id": 6,
+            "name": "Cancun coconut milk drink with nata de coco/original 470ml x 12",
+            "slug": "cancun-coconut-milk-drink-with-nata-de-coco-original-470ml-x-12",
+            "sku": "01-0269",
+            "categories": ["leches-coco", "coconut-milks"],
+            "image": "/img/products/coconut-milks/01-0269.png"
+        },
+        {
+            "id": 7,
+            "name": "Cancun Mango 250ml 8.5oz/24",
+            "slug": "cancun-mango-250ml-8-5oz-24",
+            "sku": "01-0183",
+            "categories": ["agua-coco-y-mango", "coconut-and-mango-water"],
+            "image": "/img/products/coconut-and-mango-water/01-0183.png"
+        },
+        {
+            "id": 8,
+            "name": "Cancun Mango 1Lt 33oz/12",
+            "slug": "cancun-mango-1lt-33oz-12",
+            "sku": "01-0382",
+            "categories": ["agua-coco-y-mango", "coconut-and-mango-water"],
+            "image": "/img/products/coconut-and-mango-water/01-0382.png"
+        }
+    ]
+}

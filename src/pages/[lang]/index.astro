@@ -6,7 +6,7 @@ import Hero from '../../components/home/sections/Hero.astro';
 import Skills from '../../components/home/sections/Skills.astro';
 import Banner from '../../components/home/sections/Banner.astro';
 import AboutKoko from '../../components/home/sections/AboutKoko.astro';
-
+import Questions from '../../components/home/sections/Questions.astro';
 const lang = Astro.params.lang as Lang;
 const data = content[lang];
 
@@ -33,6 +33,7 @@ const { data: places, error: errorPlaces } = await Astro.callAction(actions.getP
     <Categories lang={lang} />
     <Reviews lang={lang} reviews={reviews?.data || null} />
     <Places lang={lang} places={places?.data || null} />
+    <Questions lang={lang} />
     <ModalChallengeMeteUnGolazo />
     <div class="min-h-screen flex flex-col items-center justify-center relative p-6">
         

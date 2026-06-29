@@ -1,0 +1,60 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import content from '../../../data/site-categories-content.json';
+import { TreePalm } from 'lucide-astro';
+
+interface Props {
+    lang: Lang;
+    category: string;
+}
+
+const { lang, category } = Astro.props;
+
+const data = content[lang].categories.categories.find((c) => c.slugs.includes(category));
+---
+
+{data ? (
+    <section id="category-hero" class="relative w-full font-manrope bg-gray-cancun">
+        
+        <div class="relative w-full h-[55vh] md:h-[65vh] min-h-[450px] overflow-hidden">
+            
+            <picture class="absolute inset-0 w-full h-full z-0">
+                <source media="(min-width: 768px)" srcset={data.image_pc} />
+                <img 
+                    src={data.image_mobile} 
+                    alt={`Banner de la categoría ${data.title}`} 
+                    class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                />
+            </picture>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black-cancun/50 via-black-cancun/30 to-transparent z-10"></div>
+
+            <div class="absolute inset-0 z-20 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+                
+                <div class="flex items-center gap-2 mb-4">
+                    <TreePalm class="w-6 h-6 md:w-8 md:h-8 text-green-cancun drop-shadow-md" />
+                    <span class="text-sm md:text-base font-bold tracking-widest uppercase text-white-cancun drop-shadow-md">
+                        Categoría
+                    </span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white-cancun tracking-tight mb-4 drop-shadow-xl">
+                    {data.title}
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-200 font-medium max-w-2xl drop-shadow-lg leading-relaxed">
+                    {data.description}
+                </p>
+
+            </div>
+        </div>
+        
+    </section>
+) : (
+    <section class="w-full py-32 flex flex-col items-center justify-center bg-gray-cancun text-center px-5">
+        <h1 class="text-4xl font-bold text-black-cancun mb-4">Categoría no encontrada</h1>
+        <p class="text-gray-600">Lo sentimos, no pudimos cargar la información de esta categoría.</p>
+        <a href={`/${lang}/`} class="mt-8 px-6 py-3 bg-red-cancun text-white-cancun font-bold rounded-full hover:opacity-90 transition">
+            Volver al Inicio
+        </a>
+    </section>
+)}
