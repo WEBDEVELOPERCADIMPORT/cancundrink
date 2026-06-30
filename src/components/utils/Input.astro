@@ -6,10 +6,11 @@ interface Props extends HTMLAttributes<'input'> {
     label?: string
     color?: string
     ref:   string
+    name?: string
     icon?: any
 }
 
-const { label, color = "green-cancun", ref, icon: Icon, ...rest  } = Astro.props;
+const { label, color = "green-cancun", ref, name, icon: Icon, ...rest  } = Astro.props;
 ---
 
 
@@ -31,7 +32,7 @@ const { label, color = "green-cancun", ref, icon: Icon, ...rest  } = Astro.props
 
         <input 
             id={ref} 
-            name={ref} 
+            name={name ?? ref} 
             {...rest}  
             class={`bg-gray-real p-2 w-full outline-none ${Icon ? 'pl-10' : 'pl-3'}`}
         />
