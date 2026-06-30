@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 
 import cloudflare from '@astrojs/cloudflare';
 import { LANGUAGES } from './src/i18n/config.i18n';
+import { getAllSitemapUrls } from './src/utils/sitemapUrls.mjs';
+
+const uniqueUrls = getAllSitemapUrls();
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,9 +47,6 @@ export default defineConfig({
     changefreq: 'weekly',
     priority: 0.7,
     lastmod: new Date(),
-    customPages: [
-      'https://cancundrink.com/',
-      'https://cancundrink.com/en/'
-    ]
+    customPages: uniqueUrls
   })]
 });
