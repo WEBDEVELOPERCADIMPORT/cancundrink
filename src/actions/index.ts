@@ -2,9 +2,12 @@
 import { getPlaces } from './places/getPlaces.action';
 import { getReviews } from './reviews/getReviews.action';
 import { getProductsForCategory } from './products/getProductsforCategory.action';
+import { getProductBySlug, getProdcutBySlug } from './products/getProductBySlug.action';
 
 export const server = {
     getReviews,
     getPlaces,
-    getProductsForCategory
+    getProductsForCategory,
+    getProductBySlug,
+    getProdcutBySlug
 };

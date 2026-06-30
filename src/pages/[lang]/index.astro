@@ -22,9 +22,51 @@ import ModalChallengeMeteUnGolazo from '../../components/home/ModalChallengeMete
 
 const { data: reviews, error: errorReviews } = await Astro.callAction(actions.getReviews, {});
 const { data: places, error: errorPlaces } = await Astro.callAction(actions.getPlaces, {});
+
+const pageTitle = `${data.brandName} | ${data.hero.subtitle}`;
+const pageDescription = data.about.description;
+const pageImage = '/img/utils/categories/agua-coco-y-mango.jpg';
+
+const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebPage',
+            name: pageTitle,
+            description: pageDescription,
+            inLanguage: lang,
+            url: `https://cancundrink.com/${lang}/`,
+            image: `https://cancundrink.com${pageImage}`
+        },
+        {
+            '@type': 'Organization',
+            name: 'Cancun Drink',
+            url: 'https://cancundrink.com/',
+            logo: 'https://cancundrink.com/logo_cancun.png',
+            sameAs: []
+        },
+        {
+            '@type': 'ItemList',
+            name: data.categories.title,
+            itemListElement: data.categories.categories.map((category, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: category.title,
+                url: `https://cancundrink.com/${lang}/${category.slug}`
+            }))
+        }
+    ]
+};
 ---
 
-<Layout title={data.brandName} lang={lang}>
+<Layout
+    title={pageTitle}
+    lang={lang}
+    description={pageDescription}
+    image={pageImage}
+    schema={schema}
+    canonicalPath={`/${lang}/`}
+>
 
     <Hero lang={lang} />
     <Skills lang={lang} />
@@ -38,7 +80,7 @@ const { data: places, error: errorPlaces } = await Astro.callAction(actions.getP
     <div class="min-h-screen flex flex-col items-center justify-center relative p-6">
         
         <div class="relative group mb-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#21D4ED] to-[#AF25FD] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 rounded-full"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-[#21D4ED] to-[#AF25FD] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 rounded-full"></div>
             <img 
                 src="/logo_cancun.png" 
                 alt="Logo Flotante" 
@@ -49,7 +91,7 @@ const { data: places, error: errorPlaces } = await Astro.callAction(actions.getP
         <h1 class="text-gray-400 text-center">
             ® Cancun Drink
         </h1>
-    </main>
+    </div>
 </Layout>
 
 

@@ -36,6 +36,7 @@
             },
             "products": {
                   "title": "Explora el Paraíso",
+                  "returnHome": "Volver al Inicio",
                   "description": "Descubre nuestra amplia gama de bebidas refrescantes y deliciosas."
             },
             "questions": {
@@ -64,35 +65,36 @@
                         {
                               "title": "Coconut and Mango Water",
                               "description": "Explore our variety of refreshing and delicious drinks.",
-                              "slugs": ["agua-de-coco-y-mango", "coconut-and-mango-water"],
+                              "slugs": ["agua-coco-y-mango", "coconut-and-mango-water"],
                               "image_pc": "/img/utils/category-page/coconut-and-mango-water_pc.png",
                               "image_mobile": "/img/utils/category-page/coconut-and-mango-water_mobile.jpg"
                         },
                         {
                               "title": "Coconut Milks",
                               "description": "Discover our coconut milks perfect for accompanying your drinks.",
-                              "slugs": ["leches-de-coco", "coconut-milks"],
+                              "slugs": ["leches-coco", "coconut-milks"],
                               "image_pc": "/img/utils/category-page/coconut-milks_pc.png",
                               "image_mobile": "/img/utils/category-page/coconut-milks_mobile.jpg"
                         },
                         {
                               "title": "Fruit Juices",
                               "description": "Enjoy our fresh and natural fruit juices.",
-                              "slugs": ["jugos-de-frutas", "fruit-juices"],
+                              "slugs": ["jugos-frutas", "fruit-juices"],
                               "image_pc": "/img/utils/category-page/fruit-juices_pc.png",
                               "image_mobile": "/img/utils/category-page/fruit-juices_mobile.jpg"
                         },
                         {
                               "title": "Aloe Juices",
                               "description": "Enjoy our fresh and natural aloe juices.",
-                              "slugs": ["jugos-de-aloe", "aloe-juices"],
+                              "slugs": ["jugos-aloe", "aloe-juices"],
                               "image_pc": "/img/utils/category-page/aloe-juices_pc.png",
                               "image_mobile": "/img/utils/category-page/aloe-juices_mobile.jpg"
                         }
                   ]
             },
             "products": {
-                  "title": "Explore Paradise"
+                  "title": "Explore Paradise",
+                  "returnHome": "Return to Home"
             },
             "questions": {
                   "title": "Frequently Asked Questions",

@@ -11,7 +11,13 @@ import { LANGUAGES } from './src/i18n/config.i18n';
 export default defineConfig({
   output: 'server',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ['astro:transitions']
+    },
+    ssr: {
+      noExternal: ['astro:transitions']
+    }
   },
 
   site: 'https://cancundrink.com',

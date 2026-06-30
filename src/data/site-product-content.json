@@ -1,0 +1,46 @@
+{
+  "es": {
+    "productsList": {
+      "viewProduct": "Ver producto"
+    },
+    "product": {
+      "title": "Detalle del producto",
+      "returnHome": "Volver al Inicio",
+      "skuLabel": "SKU",
+      "categoryLabel": "Categoría"
+    },
+    "recommended": {
+      "title": "Recomendados para ti",
+      "viewProduct": "Ver producto",
+      "buyOnAmazon": "Comprar en Amazon",
+      "findStore": "Buscar tienda"
+    },
+    "notFound": {
+      "title": "Producto no encontrado",
+      "description": "Lo sentimos, no pudimos cargar la información de este producto.",
+      "returnToCategory": "Volver a la categoría"
+    }
+  },
+  "en": {
+    "productsList": {
+      "viewProduct": "View product"
+    },
+    "product": {
+      "title": "Product details",
+      "returnHome": "Return to Home",
+      "skuLabel": "SKU",
+      "categoryLabel": "Category"
+    },
+    "recommended": {
+      "title": "Recommended for you",
+      "viewProduct": "View product",
+      "buyOnAmazon": "Buy on Amazon",
+      "findStore": "Find store"
+    },
+    "notFound": {
+      "title": "Product not found",
+      "description": "Sorry, we could not load the information for this product.",
+      "returnToCategory": "Back to category"
+    }
+  }
+}

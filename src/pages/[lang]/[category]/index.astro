@@ -17,10 +17,66 @@ import { actions } from 'astro:actions';
 import Products from '../../../components/category/sections/Products.astro';
 
 const { data: products, error: errorProducts } = await Astro.callAction(actions.getProductsForCategory, { category });
+
+if (!data) {
+    return Astro.redirect('/404');
+}
+
+const pageTitle = `${data.title} | Cancun Drink`;
+const pageDescription = data.description;
+const pageImage = data.image_pc;
+
+const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'CollectionPage',
+            name: pageTitle,
+            description: pageDescription,
+            inLanguage: lang,
+            url: `https://cancundrink.com/${lang}/${category}`,
+            image: `https://cancundrink.com${pageImage}`
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: lang === 'es' ? 'Inicio' : 'Home',
+                    item: `https://cancundrink.com/${lang}/`
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: data.title,
+                    item: `https://cancundrink.com/${lang}/${category}`
+                }
+            ]
+        },
+        {
+            '@type': 'ItemList',
+            name: data.title,
+            itemListElement: (products?.data ?? []).map((product, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: product.name,
+                url: `https://cancundrink.com/${lang}/${category}/${product.slug}`
+            }))
+        }
+    ]
+};
 ---
-<Layout title={data?.title || category} lang={lang}>
+<Layout
+    title={pageTitle}
+    lang={lang}
+    description={pageDescription}
+    image={pageImage}
+    schema={schema}
+    canonicalPath={`/${lang}/${category}`}
+>
     <HeroCategory lang={lang} category={category} />
-    <Products lang={lang} products={products?.data || null} />
+    <Products lang={lang} products={products?.data || null} category={category} />
     <Questions lang={lang} />
 </Layout>
 

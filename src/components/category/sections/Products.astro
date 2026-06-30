@@ -1,7 +1,9 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
 import content from '../../../data/site-categories-content.json';
-import { TreePalm  } from 'lucide-astro'
+import productPageContent from '../../../data/site-product-content.json';
+import ProductCard from '../../utils/ProductCard.astro';
+import { MoveLeft, TreePalm  } from 'lucide-astro'
 
 export interface Product {
     name: string;
@@ -14,16 +16,31 @@ export interface Product {
 interface Props {
     lang: Lang;
     products: Product[] | null;
+    category?: string;
 }
 
 const { lang } = Astro.props;
 const { products } = Astro.props;
+const { category } = Astro.props;
 
 const data = content[lang].products;
+const productData = productPageContent[lang].recommended;
 ---
 
 <section id="products" class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto">
-    
+    <div class="max-w-7xl mx-auto w-full flex flex-wrap items-center gap-x-2 gap-y-1 mb-6">
+        <MoveLeft class="w-6 h-6 md:w-8 md:h-8 text-green-cancun drop-shadow-md shrink-0" />
+        
+        <a href={`/${lang}/#categories`} class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md hover:underline whitespace-nowrap">
+            {data.returnHome}
+        </a>
+        
+        {category ? (
+            <span class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md whitespace-nowrap">
+                / {category}
+            </span>
+        ) : null}
+    </div>
     <header class="w-full mb-8">
         <h2 class="font-bold text-3xl md:text-4xl text-left text-neutral-800">{data.title}</h2>
     </header>
@@ -33,38 +50,15 @@ const data = content[lang].products;
             {
                 products?.map((product, index) => {
                     return (
-                        <div
-                            data-aos="fade-up"
-                            data-aos-delay={200 + index * 100}
-                            class="bg-white p-5 rounded-2xl  border border-gray-100 flex flex-col justify-between items-center text-center transition-all duration-300 "
-                        >
-                            <div class="w-full h-80 flex items-center justify-center mb-4 overflow-hidden rounded-2xl">
-                                <img 
-                                    src={product.image} 
-                                    class="max-h-full object-contain hover:scale-105 transition-transform duration-300" 
-                                    alt={product.name}
-                                >
-                            </div>
-
-                            <div class="w-full flex-grow flex flex-col justify-start mb-6">
-                                <h3 class="font-bold text-base text-neutral-800 line-clamp-2">{product.name}</h3>
-                            </div>
-
-                            <div class="w-full flex flex-col gap-2 mt-auto">
-                                <a 
-                                    href="#" 
-                                    class="w-full py-2.5 px-4 bg-[#E50012] hover:bg-red-700 text-white font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
-                                >
-                                    Comprar en Amazon
-                                </a>
-                                <a 
-                                    href="#" 
-                                    class="w-full py-2.5 px-4 bg-[#FFCC00] hover:bg-yellow-500 text-neutral-900 font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
-                                >
-                                    Buscar tienda
-                                </a>
-                            </div>              
-                        </div>
+                        <ProductCard
+                            product={product}
+                            lang={lang}
+                            category={category}
+                            index={index}
+                            viewProductLabel={productData.viewProduct}
+                            buyOnAmazonLabel={productData.buyOnAmazon}
+                            findStoreLabel={productData.findStore}
+                        />
                     )
                 })
             }

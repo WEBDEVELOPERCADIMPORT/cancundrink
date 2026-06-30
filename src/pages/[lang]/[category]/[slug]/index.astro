@@ -1,0 +1,125 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import type { Lang } from '../../../../i18n/config.i18n';
+import categoriesContent from '../../../../data/site-categories-content.json';
+import productPageContent from '../../../../data/site-product-content.json';
+import { actions } from 'astro:actions';
+import ProductSection from '../../../../components/product/sections/Product.astro';
+import RecommendedForYou from '../../../../components/product/sections/RecommendedForYou.astro';
+import 'aos/dist/aos.css';
+import Questions from '../../../../components/home/sections/Questions.astro';
+
+const lang = Astro.params.lang as Lang;
+const category = Astro.params.category as string;
+const slug = Astro.params.slug as string;
+
+if (!(lang in productPageContent) || !(lang in categoriesContent)) {
+  return Astro.redirect('/404');
+}
+
+const categories = categoriesContent[lang].categories.categories as Array<{ slugs: string[]; title: string }>;
+
+const categoryData = categories.find((item) =>
+  item.slugs.includes(category)
+);
+
+if (!categoryData) {
+  return Astro.redirect('/404');
+}
+
+const { data: productResponse } = await Astro.callAction(actions.getProductBySlug, {
+  slug,
+  category,
+});
+
+const product = productResponse?.data ?? null;
+
+if (!product) {
+  return Astro.redirect('/404');
+}
+
+const { data: productsByCategoryResponse } = await Astro.callAction(actions.getProductsForCategory, {
+  category,
+});
+
+const recommendedProducts = (productsByCategoryResponse?.data ?? []).filter(
+  (item) => item.slug !== slug
+);
+
+const pageTitle = `${product.name} | ${categoryData.title} | Cancun Drink`;
+const pageDescription = `${productPageContent[lang].product.title}: ${product.name}. ${productPageContent[lang].product.skuLabel} ${product.sku}.`;
+const pageImage = product.image;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Product',
+      name: product.name,
+      sku: product.sku,
+      image: `https://cancundrink.com${product.image}`,
+      category: categoryData.title,
+      brand: {
+        '@type': 'Brand',
+        name: 'Cancun Drink'
+      },
+      url: `https://cancundrink.com/${lang}/${category}/${slug}`
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: lang === 'es' ? 'Inicio' : 'Home',
+          item: `https://cancundrink.com/${lang}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: categoryData.title,
+          item: `https://cancundrink.com/${lang}/${category}`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: product.name,
+          item: `https://cancundrink.com/${lang}/${category}/${slug}`
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title={pageTitle}
+  lang={lang}
+  description={pageDescription}
+  image={pageImage}
+  schema={schema}
+  canonicalPath={`/${lang}/${category}/${slug}`}
+>
+  <ProductSection
+    lang={lang}
+    category={category}
+    categoryTitle={categoryData.title}
+    product={product}
+  />
+  <RecommendedForYou
+    lang={lang}
+    category={category}
+    products={recommendedProducts as any}
+  />
+  <Questions lang={lang} />
+</Layout>
+
+<script>
+  import AOS from 'aos';
+
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100,
+  });
+</script>

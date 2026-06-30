@@ -1,11 +1,12 @@
 ---
 import type { Lang } from '../../i18n/config.i18n';
-import { ui } from "../../i18n/ui.i18n";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils.i18n';
 import { Globe } from 'lucide-astro';
+import homeContent from '../../data/site-home-content.json';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const categories = homeContent[lang].categories.categories;
 
 const currentPath = Astro.url.pathname;
 const switchLangPath =
@@ -19,7 +20,7 @@ const switchLangPath =
     
     <div class="flex-1 hidden sm:block"></div>
 
-    <a href={`/${lang}/`} class="flex-shrink-0 transition hover:opacity-80 mx-auto sm:mx-0">
+        <a href={`/${lang}/`} class="shrink-0 transition hover:opacity-80 mx-auto sm:mx-0">
       <img src="/logo_cancun.png" class="w-auto h-14 sm:h-15 object-contain" alt="Logo del sitio" />
     </a>
 
@@ -59,7 +60,7 @@ const switchLangPath =
 
 <aside 
     id="sidebar" 
-    class="fixed top-0 right-0 h-[100dvh] w-72 sm:w-80 bg-white-cancun shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-manrope"
+    class="fixed top-0 right-0 h-dvh w-72 sm:w-80 bg-white-cancun shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-manrope"
 >
     <div class="flex justify-between items-center p-6 border-b border-gray-100">
         <span class="font-bold text-gray-400 text-sm tracking-widest uppercase border-b-2 border-red-cancun pb-1">Menú</span>
@@ -83,11 +84,44 @@ const switchLangPath =
                 </a>
             </li>
             <li>
-                <a href={`/${lang}/#about`} class="block hover:text-red-cancun transition-colors w-fit">
+                <a href={`/${lang}/#about-koko`} class="block hover:text-red-cancun transition-colors w-fit">
                     {t.nav.about}
                 </a>
             </li>
+            <li>
+                <a href={`/${lang}/#categories`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.products}
+                </a>
+            </li>
+            <li>
+                <a href={`/${lang}/#reviews`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.reviews}
+                </a>
+            </li>
+            <li>
+                <a href={`/${lang}/#places`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.storeFinder}
+                </a>
+            </li>
+            <li>
+                <a href={`#questions`} class="block hover:text-red-cancun transition-colors w-fit">
+                    {t.nav.faq}
+                </a>
+            </li>
         </ul>
+
+        <div class="mt-10 pt-6 border-t border-gray-100">
+            <p class="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">{t.nav.productCategories}</p>
+            <ul class="flex flex-col gap-3 text-base font-semibold text-black-cancun">
+                {categories.map((category) => (
+                    <li>
+                        <a href={`/${lang}/${category.slug}`} class="block hover:text-red-cancun transition-colors w-fit">
+                            {category.title}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
     </nav>
     
     <div class="p-6 text-sm text-gray-400 border-t border-gray-100 bg-gray-50/50">
@@ -96,47 +130,79 @@ const switchLangPath =
 </aside>
 
 <script>
-    const openBtn = document.getElementById('open-sidebar-btn');
-    const closeBtn = document.getElementById('close-sidebar-btn');
-    const sidebar = document.getElementById('sidebar');
-    const backdrop = document.getElementById('sidebar-backdrop');
+    let cleanupSidebarEvents = () => {};
 
-    function openSidebar() {
-        if (!sidebar || !backdrop) return;
-        
-        backdrop.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            backdrop.classList.remove('opacity-0');
-            sidebar.classList.remove('translate-x-full');
-        });
-        
-        document.body.style.overflow = 'hidden';
-    }
+    function initNavbarSidebar() {
+        cleanupSidebarEvents();
 
-    function closeSidebar() {
-        if (!sidebar || !backdrop) return;
-        
-        sidebar.classList.add('translate-x-full');
-        backdrop.classList.add('opacity-0');
-        
-        setTimeout(() => {
+        const openBtn = document.getElementById('open-sidebar-btn');
+        const closeBtn = document.getElementById('close-sidebar-btn');
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+
+        if (!openBtn || !closeBtn || !sidebar || !backdrop) {
+            cleanupSidebarEvents = () => {};
+            return;
+        }
+
+        const forceClosedState = () => {
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.add('opacity-0');
             backdrop.classList.add('hidden');
             document.body.style.overflow = '';
-        }, 300); 
+        };
+
+        const openSidebar = () => {
+            backdrop.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                backdrop.classList.remove('opacity-0');
+                sidebar.classList.remove('translate-x-full');
+            });
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.add('opacity-0');
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        };
+
+        const onOpenClick = () => openSidebar();
+        const onCloseClick = () => closeSidebar();
+        const onBackdropClick = () => closeSidebar();
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') closeSidebar();
+        };
+        const onSidebarClick = (e: MouseEvent) => {
+            const target = e.target;
+            if (target instanceof Element && target.closest('a')) {
+                forceClosedState();
+            }
+        };
+        const onBeforeSwap = () => {
+            forceClosedState();
+        };
+
+        openBtn.addEventListener('click', onOpenClick);
+        closeBtn.addEventListener('click', onCloseClick);
+        backdrop.addEventListener('click', onBackdropClick);
+        sidebar.addEventListener('click', onSidebarClick);
+        document.addEventListener('keydown', onKeyDown);
+        document.addEventListener('astro:before-swap', onBeforeSwap);
+
+        cleanupSidebarEvents = () => {
+            openBtn.removeEventListener('click', onOpenClick);
+            closeBtn.removeEventListener('click', onCloseClick);
+            backdrop.removeEventListener('click', onBackdropClick);
+            sidebar.removeEventListener('click', onSidebarClick);
+            document.removeEventListener('keydown', onKeyDown);
+            document.removeEventListener('astro:before-swap', onBeforeSwap);
+        };
     }
 
-    // Event Listeners
-    openBtn?.addEventListener('click', openSidebar);
-    closeBtn?.addEventListener('click', closeSidebar);
-    backdrop?.addEventListener('click', closeSidebar);
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeSidebar();
-    });
-
-    // Cerrar sidebar al hacer clic en un enlace (útil para enlaces tipo "ancla" como #about)
-    const sidebarLinks = sidebar?.querySelectorAll('a');
-    sidebarLinks?.forEach(link => {
-        link.addEventListener('click', closeSidebar);
-    });
+    initNavbarSidebar();
+    document.addEventListener('astro:page-load', initNavbarSidebar);
 </script>
