@@ -65,6 +65,12 @@
             "places": {
                   "title": "Encuentra Tu Oasis",
                   "description": "Busca la tienda más cercana con Cancún Drink disponible y refresca tu día al instante.",
+                  "results": {
+                        "title": "Lugares encontrados",
+                        "noResultsPrefix": "No encontramos lugares para el codigo postal",
+                        "helperText": "Ingresa un codigo postal para ver lugares cercanos y su ubicacion en el mapa.",
+                        "mapTitle": "Mapa de lugares encontrados"
+                  },
                   "form": {
                         "inputs": {
                               "search": {
@@ -160,6 +166,12 @@
             "places": {
                   "title": "Find Your Oasis",
                   "description": "Find the nearest store with Cancún Drink available and refresh your day instantly.",
+                  "results": {
+                        "title": "Places found",
+                        "noResultsPrefix": "No places found for zipcode",
+                        "helperText": "Enter a zipcode to see nearby places and their map location.",
+                        "mapTitle": "Map of found places"
+                  },
                   "form": {
                         "inputs": {
                               "search": {

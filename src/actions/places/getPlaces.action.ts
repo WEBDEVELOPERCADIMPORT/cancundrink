@@ -1,7 +1,13 @@
 import { defineAction } from "astro:actions"
-import type { Place } from "../../components/common/Places.astro"
 import content from "../../data/places/places.json"
 import { z } from "zod"
+
+interface Place {
+    id: string;
+    name: string;
+    address: string;
+    zipCode: string;
+}
 
 
 

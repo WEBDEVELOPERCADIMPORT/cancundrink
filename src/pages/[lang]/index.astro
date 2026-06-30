@@ -21,7 +21,8 @@ import Places from '../../components/home/sections/Places.astro';
 import ModalChallengeMeteUnGolazo from '../../components/home/ModalChallengeMeteUnGolazo.astro';
 
 const { data: reviews, error: errorReviews } = await Astro.callAction(actions.getReviews, {});
-const { data: places, error: errorPlaces } = await Astro.callAction(actions.getPlaces, {});
+const zipCode = Astro.url.searchParams.get('zipCode')?.trim() || undefined;
+const { data: places, error: errorPlaces } = await Astro.callAction(actions.getPlaces, { zipCode });
 
 const pageTitle = `${data.brandName} | ${data.hero.subtitle}`;
 const pageDescription = data.about.description;
@@ -74,7 +75,7 @@ const schema = {
     <AboutKoko lang={lang} />
     <Categories lang={lang} />
     <Reviews lang={lang} reviews={reviews?.data || null} />
-    <Places lang={lang} places={places?.data || null} />
+    <Places lang={lang} places={places?.data || null} searchedZipCode={zipCode || null} />
     <Questions lang={lang} />
     <ModalChallengeMeteUnGolazo />
     <div class="min-h-screen flex flex-col items-center justify-center relative p-6">

@@ -1,21 +1,45 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
 import content from '../../../data/site-home-content.json';
-import PlacesComponent ,{ type Place } from '../../common/Places.astro';
+import PlacesComponent from '../../common/Places.astro';
+
+interface Place {
+    id: string;
+    name: string;
+    address: string;
+    zipCode: string;
+}
 
 interface Props {
     lang: Lang;
     places: Place[] | null;
+    searchedZipCode?: string | null;
 }
 
 const lang = Astro.props.lang as Lang
 const places = Astro.props.places as Place[]
+const searchedZipCode = Astro.props.searchedZipCode as string | null
 
 const data = content[lang].places;
+const resultsTitle = data.results.title;
+const noResultsPrefix = data.results.noResultsPrefix;
+const helperText = data.results.helperText;
+const mapTitle = data.results.mapTitle;
 ---
 
 <section id="places" class="w-full flex-col justify-center px-5 py-20 bg-gray-cancun">
 
-    <PlacesComponent title={data.title} placeholder={data.form.inputs.search.placeholder} textButton={data.form.buttonAccion.label} description={data.description} places={places} />
+    <PlacesComponent
+        title={data.title}
+        placeholder={data.form.inputs.search.placeholder}
+        textButton={data.form.buttonAccion.label}
+        description={data.description}
+        places={places}
+        searchedZipCode={searchedZipCode}
+        resultsTitle={resultsTitle}
+        noResultsPrefix={noResultsPrefix}
+        helperText={helperText}
+        mapTitle={mapTitle}
+    />
 
 </section>
