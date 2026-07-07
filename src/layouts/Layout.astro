@@ -43,7 +43,6 @@ const socialImageURL = new URL(image, Astro.url.origin).href;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#ffffff" /> <link rel="icon" type="image/png" href="/icono_cancun.png" />
-        
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
@@ -75,6 +74,7 @@ const socialImageURL = new URL(image, Astro.url.origin).href;
         <ClientRouter />
 
         {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="c2a5c8d1-d607-484e-a76c-a75825ff399a"></script>
     </head>
     <body class="bg-white text-gray-900 antialiased">
         <Navbar lang={lang} />

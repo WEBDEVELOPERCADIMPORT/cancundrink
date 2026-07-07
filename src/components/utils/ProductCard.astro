@@ -54,8 +54,12 @@ const {
 
   <div class="w-full flex flex-col gap-2 mt-auto">
     <a
-      href={category ? `/${lang}/${category}/${product.slug}` : '#'}
-      class="w-full py-2.5 px-4 bg-green-cancun hover:opacity-90 text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
+        data-umami-event="Click View Product"
+        data-umami-event-category="Product Card"
+        data-umami-event-product-name={product.name}
+        data-umami-event-product-sku={product.sku}
+        href={category ? `/${lang}/${category}/${product.slug}` : '#'}
+        class="w-full py-2.5 px-4 bg-green-cancun hover:opacity-90 text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
     >
       {viewProductLabel}
     </a>
