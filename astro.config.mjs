@@ -13,6 +13,7 @@ const uniqueUrls = getAllSitemapUrls();
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
@@ -20,7 +21,10 @@ export default defineConfig({
     },
     ssr: {
       noExternal: ['astro:transitions']
-    }
+    },
+    server: {
+      allowedHosts: ['app.asyncronix.com', 'www.app.asyncronix.com'],
+    },
   },
 
   site: 'https://cancundrink.com',
