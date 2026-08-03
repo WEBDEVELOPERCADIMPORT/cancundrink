@@ -1,0 +1,37 @@
+---
+import { ShoppingCart } from "lucide-astro";
+
+interface Props {
+  href: string;
+  text: string;
+  class?: string;
+  productName?: string;
+  productSku?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  text,
+  class:
+    className = "w-full py-2.5 px-4 bg-[#E50012] hover:bg-red-700 text-white font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2",
+  productName,
+  productSku,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  data-umami-event="Click Buy at Store"
+  data-umami-event-product-name={productName}
+  data-umami-event-store-name="Vas al Super"
+  data-umami-event-product-sku={productSku}
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={className}
+  {...rest}
+>
+  <ShoppingCart class="w-4 h-4 md:w-5 md:h-5 shrink-0" />
+  <span>{text}</span>
+</a>

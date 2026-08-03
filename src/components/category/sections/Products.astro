@@ -1,9 +1,9 @@
 ---
-import type { Lang } from '../../../i18n/config.i18n';
-import content from '../../../data/site-categories-content.json';
-import productPageContent from '../../../data/site-product-content.json';
-import ProductCard from '../../utils/ProductCard.astro';
-import { MoveLeft, TreePalm  } from 'lucide-astro'
+import type { Lang } from "../../../i18n/config.i18n";
+import content from "../../../data/site-categories-content.json";
+import productPageContent from "../../../data/site-product-content.json";
+import ProductCard from "../../utils/ProductCard.astro";
+import { MoveLeft, TreePalm } from "lucide-astro";
 
 export interface Product {
     name: string;
@@ -11,6 +11,7 @@ export interface Product {
     sku: string;
     categories: string[];
     image: string;
+    linkVasAlSuper?: string;
 }
 
 interface Props {
@@ -27,26 +28,42 @@ const data = content[lang].products;
 const productData = productPageContent[lang].recommended;
 ---
 
-<section id="products" class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto">
-    <div class="max-w-7xl mx-auto w-full flex flex-wrap items-center gap-x-2 gap-y-1 mb-6">
-        <MoveLeft class="w-6 h-6 md:w-8 md:h-8 text-green-cancun drop-shadow-md shrink-0" />
-        
-        <a href={`/${lang}/#categories`} class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md hover:underline whitespace-nowrap">
+<section
+    id="products"
+    class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto"
+>
+    <div
+        class="max-w-7xl mx-auto w-full flex flex-wrap items-center gap-x-2 gap-y-1 mb-6"
+    >
+        <MoveLeft
+            class="w-6 h-6 md:w-8 md:h-8 text-green-cancun drop-shadow-md shrink-0"
+        />
+
+        <a
+            href={`/${lang}/#categories`}
+            class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md hover:underline whitespace-nowrap"
+        >
             {data.returnHome}
         </a>
-        
-        {category ? (
-            <span class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md whitespace-nowrap">
-                / {category}
-            </span>
-        ) : null}
+
+        {
+            category ? (
+                <span class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun drop-shadow-md whitespace-nowrap">
+                    / {category}
+                </span>
+            ) : null
+        }
     </div>
     <header class="w-full mb-8">
-        <h2 class="font-bold text-3xl md:text-4xl text-left text-neutral-800">{data.title}</h2>
+        <h2 class="font-bold text-3xl md:text-4xl text-left text-neutral-800">
+            {data.title}
+        </h2>
     </header>
 
     <article class="w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center"
+        >
             {
                 products?.map((product, index) => {
                     return (
@@ -56,13 +73,12 @@ const productData = productPageContent[lang].recommended;
                             category={category}
                             index={index}
                             viewProductLabel={productData.viewProduct}
-                            buyOnAmazonLabel={productData.buyOnAmazon}
+                            buyOnLabel={productData.buyOnVasAlSuper}
                             findStoreLabel={productData.findStore}
                         />
-                    )
+                    );
                 })
             }
         </div>
     </article>
-
 </section>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  class?: string;
+  productName?: string;
+  productSku?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  text,
+  class:
+    className = "w-full py-2.5 px-4 bg-green-cancun hover:opacity-90 text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2",
+  productName,
+  productSku,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  data-umami-event="Click View Product"
+  data-umami-event-product-name={productName}
+  data-umami-event-product-sku={productSku}
+  href={href}
+  class={className}
+  {...rest}
+>
+  {text}
+</a>

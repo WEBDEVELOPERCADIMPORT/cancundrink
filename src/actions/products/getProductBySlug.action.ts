@@ -9,6 +9,7 @@ interface Product {
   sku: string;
   categories: string[];
   image: string;
+  linkVasAlSuper?: string;
 }
 
 export const getProductBySlug = defineAction({

@@ -1,5 +1,7 @@
 ---
-import type { Lang } from '../../i18n/config.i18n';
+import type { Lang } from "../../i18n/config.i18n";
+import BuyStoreButton from "./BuyStoreButton.astro";
+import ViewProductButton from "./ViewProductButton.astro";
 
 interface Product {
   id?: number;
@@ -8,6 +10,7 @@ interface Product {
   sku: string;
   categories: string[];
   image: string;
+  linkVasAlSuper?: string;
 }
 
 interface Props {
@@ -16,7 +19,7 @@ interface Props {
   category?: string;
   index?: number;
   viewProductLabel: string;
-  buyOnAmazonLabel: string;
+  buyOnLabel: string;
   findStoreLabel: string;
   cardClass?: string;
   imageWrapperClass?: string;
@@ -28,18 +31,14 @@ const {
   category,
   index = 0,
   viewProductLabel,
-  buyOnAmazonLabel,
+  buyOnLabel,
   findStoreLabel,
-  cardClass = 'bg-white p-5 rounded-2xl border border-gray-100 flex flex-col justify-between items-center text-center transition-all duration-300',
-  imageWrapperClass = 'w-full h-80 flex items-center justify-center mb-4 overflow-hidden rounded-2xl'
+  cardClass = "bg-white p-5 rounded-2xl border border-gray-100 flex flex-col justify-between items-center text-center transition-all duration-300",
+  imageWrapperClass = "w-full h-80 flex items-center justify-center mb-4 overflow-hidden rounded-2xl",
 } = Astro.props;
 ---
 
-<div
-  data-aos="fade-up"
-  data-aos-delay={200 + index * 100}
-  class={cardClass}
->
+<div data-aos="fade-up" data-aos-delay={200 + index * 100} class={cardClass}>
   <div class={imageWrapperClass}>
     <img
       src={product.image}
@@ -49,31 +48,23 @@ const {
   </div>
 
   <div class="w-full grow flex flex-col justify-start mb-6 min-w-0">
-    <h3 class="font-bold text-base text-neutral-800 line-clamp-2 wrap-anywhere">{product.name}</h3>
+    <h3 class="font-bold text-base text-neutral-800 line-clamp-2 wrap-anywhere">
+      {product.name}
+    </h3>
   </div>
 
   <div class="w-full flex flex-col gap-2 mt-auto">
-    <a
-        data-umami-event="Click View Product"
-        data-umami-event-category="Product Card"
-        data-umami-event-product-name={product.name}
-        data-umami-event-product-sku={product.sku}
-        href={category ? `/${lang}/${category}/${product.slug}` : '#'}
-        class="w-full py-2.5 px-4 bg-green-cancun hover:opacity-90 text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
-    >
-      {viewProductLabel}
-    </a>
-    <a
-      href="#"
-      class="w-full py-2.5 px-4 bg-[#E50012] hover:bg-red-700 text-white font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
-    >
-      {buyOnAmazonLabel}
-    </a>
-    <a
-      href="#"
-      class="w-full py-2.5 px-4 bg-[#FFCC00] hover:bg-yellow-500 text-neutral-900 font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
-    >
-      {findStoreLabel}
-    </a>
+    <ViewProductButton
+      href={category ? `/${lang}/${category}/${product.slug}` : "#"}
+      text={viewProductLabel}
+      productName={product.name}
+      productSku={product.sku}
+    />
+    <BuyStoreButton
+      href={product.linkVasAlSuper || "#"}
+      text={buyOnLabel}
+      productName={product.name}
+      productSku={product.sku}
+    />
   </div>
 </div>

@@ -13,6 +13,7 @@
       "title": "Recomendados para ti",
       "viewProduct": "Ver producto",
       "buyOnAmazon": "Comprar en Amazon",
+      "buyOnVasAlSuper": "Comprar en Vas Al Super",
       "findStore": "Buscar tienda"
     },
     "notFound": {
@@ -35,6 +36,7 @@
       "title": "Recommended for you",
       "viewProduct": "View product",
       "buyOnAmazon": "Buy on Amazon",
+      "buyOnVasAlSuper": "Buy on Vas Al Super",
       "findStore": "Find store"
     },
     "notFound": {
