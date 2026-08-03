@@ -12,6 +12,7 @@ interface Product {
   sku: string;
   categories: string[];
   image: string;
+  linkVasAlSuper: string;
 }
 
 interface Props {
@@ -25,9 +26,6 @@ const { lang, category, categoryTitle, product } = Astro.props;
 const data = content[lang].product;
 ---
 
-<section id="product-detail" class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto">
-  <div class="max-w-7xl mx-auto w-full flex flex-wrap items-start gap-x-2 gap-y-1 mb-6">
-    <MoveLeft class="w-6 h-6 md:w-8 md:h-8 text-green-cancun drop-shadow-md shrink-0" />
 <section
   id="product-detail"
   class="w-full flex flex-col justify-center px-6 py-16 bg-gray-cancun mx-auto"
