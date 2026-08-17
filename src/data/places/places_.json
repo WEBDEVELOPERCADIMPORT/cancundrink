@@ -1,0 +1,34 @@
+{
+    "places": [
+        {
+            "id": "1",
+            "name": "Cancún Central Store",
+            "address": "Av. Tulum 123, Cancún, Quintana Roo",
+            "zipCode": "77500"
+        },
+        {
+            "id":"2",
+            "name": "Playa del Carmen Outlet",
+            "address": "Calle 10 #456, Playa del Carmen, Quintana Roo",
+            "zipCode": "77710"
+        },
+        {
+            "id": "3",
+            "name": "Tulum Beach Shop",
+            "address": "Carretera Tulum-Boca Paila Km 5, Tulum, Quintana Roo",
+            "zipCode": "77780"
+        },
+        {
+            "id": "4",
+            "name": "Riviera Maya Market",
+            "address": "Av. Kukulcán Km 9, Riviera Maya, Quintana Roo",
+            "zipCode": "77710"
+        },
+        {
+            "id": "5",
+            "name": "Isla Mujeres Store",
+            "address": "Calle Hidalgo #789, Isla Mujeres, Quintana Roo",
+            "zipCode": "77400"
+        }
+    ]
+}
