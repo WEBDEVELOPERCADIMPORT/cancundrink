@@ -6,7 +6,8 @@
       "tabs": {
         "nutrition": "Nutrición",
         "ingredients": "Ingredientes",
-        "company": "Compañía"
+        "company": "Compañía",
+        "aboutCancun": "Conoce más de Cancún"
       },
       "nutrition": {
         "title": "Datos de Nutrición",
@@ -57,7 +58,8 @@
       "tabs": {
         "nutrition": "Nutrition",
         "ingredients": "Ingredients",
-        "company": "Company"
+        "company": "Company",
+        "aboutCancun": "Discover Cancun"
       },
       "nutrition": {
         "title": "Nutrition Facts",

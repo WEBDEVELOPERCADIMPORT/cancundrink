@@ -1,5 +1,5 @@
 ---
-import { Utensils, ScrollText, Building2 } from "lucide-astro";
+import { Utensils, ScrollText, Building2, TreePalm } from "lucide-astro";
 import type { Lang } from "../../../i18n/config.i18n";
 import specsContent from "../../../data/site-specs-content.json";
 
@@ -19,18 +19,32 @@ const tabs = [
     slug: "nutrition",
     label: specsData.tabs.nutrition,
     icon: Utensils,
+    href: `/${lang}/${category}/${productSlug}/nutrition`,
+    isRedirect: false,
   },
   {
     id: "ingredients",
     slug: "ingredients",
     label: specsData.tabs.ingredients,
     icon: ScrollText,
+    href: `/${lang}/${category}/${productSlug}/ingredients`,
+    isRedirect: false,
   },
   {
     id: "company",
     slug: "company",
     label: specsData.tabs.company,
     icon: Building2,
+    href: `/${lang}/${category}/${productSlug}/company`,
+    isRedirect: false,
+  },
+  {
+    id: "aboutCancun",
+    slug: "aboutCancun",
+    label: specsData.tabs.aboutCancun,
+    icon: TreePalm,
+    href: `/${lang}/`,
+    isRedirect: true,
   },
 ];
 ---
@@ -40,31 +54,32 @@ const tabs = [
   aria-label="Especificaciones del producto"
 >
   <div
-    class="grid grid-cols-3 gap-2.5 sm:gap-6 w-full max-w-8xl"
+    class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6 w-full max-w-8xl"
     role="tablist"
   >
     {
       tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = tab.id === activeTab;
-        const tabHref = `/${lang}/${category}/${productSlug}/${tab.slug}`;
 
         return (
           <a
-            href={tabHref}
-            role="tab"
-            aria-selected={isActive ? "true" : "false"}
+            href={tab.href}
+            role={tab.isRedirect ? undefined : "tab"}
+            aria-selected={
+              tab.isRedirect ? undefined : isActive ? "true" : "false"
+            }
             class:list={[
-              "flex flex-col items-center justify-center p-3.5 sm:p-6 rounded-2xl border-2 transition-all duration-300 text-center group select-none shadow-sm no-underline",
+              "flex flex-col items-center justify-center p-3.5 sm:p-5 md:p-6 rounded-2xl border-2 transition-all duration-300 text-center group select-none shadow-sm no-underline",
               isActive
                 ? "bg-green-50/70 border-green-cancun text-green-cancun shadow-md scale-[1.02] font-bold"
-                : "bg-white border-gray-200 text-neutral-600 hover:border-gray-300 hover:text-black-cancun hover:bg-gray-50/80 hover:shadow font-semibold",
+                : "bg-white border-gray-200 text-neutral-600 hover:border-green-cancun hover:text-green-cancun hover:bg-green-50/30 hover:shadow font-semibold",
             ]}
           >
             <div class="mb-1.5 sm:mb-2 transition-transform duration-300 group-hover:scale-110">
               <Icon class="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <span class="text-xs sm:text-base font-extrabold tracking-wide uppercase">
+            <span class="text-xs sm:text-sm md:text-base font-extrabold tracking-wide uppercase line-clamp-2">
               {tab.label}
             </span>
           </a>

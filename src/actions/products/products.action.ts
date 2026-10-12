@@ -17,7 +17,8 @@ export const getProductsByCategory = defineAction({
     const products = typedProductsData[lang] ?? [];
 
     const filtered = products.filter((p) => {
-      return p.categorySlug === categorySlug || p.categories?.includes(categorySlug);
+      const cat = p.categoryslug || p.categorySlug;
+      return cat === categorySlug || p.categories?.includes(categorySlug);
     });
 
     return {
@@ -40,8 +41,9 @@ export const getProductBySlug = defineAction({
     const product =
       products.find((item) => {
         const matchesSlug = item.slug === productSlug;
+        const cat = item.categoryslug || item.categorySlug;
         const matchesCategory = categorySlug
-          ? item.categorySlug === categorySlug || item.categories?.includes(categorySlug)
+          ? cat === categorySlug || item.categories?.includes(categorySlug)
           : true;
         return matchesSlug && matchesCategory;
       }) ?? null;

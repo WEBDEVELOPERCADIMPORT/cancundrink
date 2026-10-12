@@ -44,9 +44,10 @@ export function getProductSitemapUrls(): string[] {
     const products = productsData[lang] || [];
 
     return products.flatMap((product) => {
+      const catSlug = product.categoryslug || product.categorySlug;
       const categorySlugs =
-        product.categorySlug && validCategorySlugs.has(product.categorySlug)
-          ? [product.categorySlug]
+        catSlug && validCategorySlugs.has(catSlug)
+          ? [catSlug]
           : (product.categories || []).filter((categorySlug) => validCategorySlugs.has(categorySlug));
 
       return categorySlugs.map((categorySlug) => `${baseUrl}/${lang}/${categorySlug}/${product.slug}`);

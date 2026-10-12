@@ -1,7 +1,7 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
 import specsContent from "../../../data/site-specs-content.json";
-import type { NutritionFacts } from "../../../types/product";
+import type { NutritionFacts, NutrientInfo } from "../../../types/product";
 
 interface Props {
   lang: Lang;
@@ -12,51 +12,45 @@ const { lang, nutrition } = Astro.props;
 const nData = specsContent[lang].specs.nutrition;
 
 // Extraer texto de porciones según el idioma activo
+const rawServings = nutrition?.servingspercontainer || nutrition?.servingsPerContainer;
 let servingsText = nData.servingsDefault;
-if (nutrition?.servingsPerContainer) {
-  if (nutrition.servingsPerContainer.includes("/")) {
-    const parts = nutrition.servingsPerContainer
+if (rawServings) {
+  if (rawServings.includes("/")) {
+    const parts = rawServings
       .split("/")
       .map((s) => s.trim());
     servingsText = lang === "es" ? parts[1] || parts[0] : parts[0];
   } else {
-    servingsText = nutrition.servingsPerContainer;
+    servingsText = rawServings;
   }
 }
 
-const servingSizeText = nutrition?.servingSize || "8 FL OZ (240 mL)";
+const servingSizeText = nutrition?.servingsize || nutrition?.servingSize || "8 FL OZ (240 mL)";
 const caloriesVal = nutrition?.calories ?? "130";
 
-const totalFat = nutrition?.totalFat ?? { amount: "7g", dailyValue: "9%" };
-const saturatedFat = nutrition?.saturatedFat ?? {
-  amount: "6g",
-  dailyValue: "30%",
-};
-const transFat = nutrition?.transFat ?? { amount: "0g", dailyValue: "0%" };
-const cholesterol = nutrition?.cholesterol ?? {
-  amount: "0mg",
-  dailyValue: "0%",
-};
-const sodium = nutrition?.sodium ?? { amount: "85mg", dailyValue: "4%" };
-const totalCarbohydrates = nutrition?.totalCarbohydrates ?? {
-  amount: "16g",
-  dailyValue: "6%",
-};
-const dietaryFiber = nutrition?.dietaryFiber ?? {
-  amount: "0g",
-  dailyValue: "0%",
-};
-const totalSugars = nutrition?.totalSugars ?? { amount: "15g", dailyValue: "" };
-const addedSugars = nutrition?.addedSugars ?? {
-  amount: "14g",
-  dailyValue: "28%",
-};
-const protein = nutrition?.protein ?? { amount: "<1g", dailyValue: "" };
+const getNutrient = (
+  nut?: NutrientInfo,
+  fallback = { amount: "0g", dailyvalue: "0%" }
+) => ({
+  amount: nut?.amount ?? fallback.amount,
+  dailyvalue: nut?.dailyvalue ?? nut?.dailyValue ?? fallback.dailyvalue ?? "",
+});
 
-const vitaminD = nutrition?.vitaminD ?? { amount: "0mcg", dailyValue: "0%" };
-const calcium = nutrition?.calcium ?? { amount: "20mg", dailyValue: "2%" };
-const iron = nutrition?.iron ?? { amount: "0.8mg", dailyValue: "4%" };
-const potassium = nutrition?.potassium ?? { amount: "240mg", dailyValue: "6%" };
+const totalFat = getNutrient(nutrition?.totalfat || nutrition?.totalFat, { amount: "7g", dailyvalue: "9%" });
+const saturatedFat = getNutrient(nutrition?.saturatedfat || nutrition?.saturatedFat, { amount: "6g", dailyvalue: "30%" });
+const transFat = getNutrient(nutrition?.transfat || nutrition?.transFat, { amount: "0g", dailyvalue: "0%" });
+const cholesterol = getNutrient(nutrition?.cholesterol, { amount: "0mg", dailyvalue: "0%" });
+const sodium = getNutrient(nutrition?.sodium, { amount: "85mg", dailyvalue: "4%" });
+const totalCarbohydrates = getNutrient(nutrition?.totalcarbohydrates || nutrition?.totalCarbohydrates, { amount: "16g", dailyvalue: "6%" });
+const dietaryFiber = getNutrient(nutrition?.dietaryfiber || nutrition?.dietaryFiber, { amount: "0g", dailyvalue: "0%" });
+const totalSugars = getNutrient(nutrition?.totalsugars || nutrition?.totalSugars, { amount: "15g", dailyvalue: "" });
+const addedSugars = getNutrient(nutrition?.addedsugars || nutrition?.addedSugars, { amount: "14g", dailyvalue: "28%" });
+const protein = getNutrient(nutrition?.protein, { amount: "<1g", dailyvalue: "" });
+
+const vitaminD = getNutrient(nutrition?.vitamind || nutrition?.vitaminD, { amount: "0mcg", dailyvalue: "0%" });
+const calcium = getNutrient(nutrition?.calcium, { amount: "20mg", dailyvalue: "2%" });
+const iron = getNutrient(nutrition?.iron, { amount: "0.8mg", dailyvalue: "4%" });
+const potassium = getNutrient(nutrition?.potassium, { amount: "240mg", dailyvalue: "6%" });
 
 const addedSugarsLabel = nData.addedSugars.replace(
   "{amount}",
@@ -125,7 +119,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.totalFat}
         <span class="font-normal">{totalFat.amount}</span>
       </span>
-      <span class="font-black">{totalFat.dailyValue}</span>
+      <span class="font-black">{totalFat.dailyvalue}</span>
     </div>
 
     <div
@@ -135,7 +129,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.saturatedFat}
         {saturatedFat.amount}
       </span>
-      <span class="font-black">{saturatedFat.dailyValue}</span>
+      <span class="font-black">{saturatedFat.dailyvalue}</span>
     </div>
 
     <div
@@ -145,7 +139,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.transFat}
         {transFat.amount}
       </span>
-      <span class="font-black">{transFat.dailyValue || ""}</span>
+      <span class="font-black">{transFat.dailyvalue || ""}</span>
     </div>
 
     <div
@@ -155,7 +149,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.cholesterol}
         <span class="font-normal">{cholesterol.amount}</span>
       </span>
-      <span class="font-black">{cholesterol.dailyValue}</span>
+      <span class="font-black">{cholesterol.dailyvalue}</span>
     </div>
 
     <div
@@ -165,7 +159,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.sodium}
         <span class="font-normal">{sodium.amount}</span>
       </span>
-      <span class="font-black">{sodium.dailyValue}</span>
+      <span class="font-black">{sodium.dailyvalue}</span>
     </div>
 
     <div
@@ -175,7 +169,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.totalCarbohydrates}
         <span class="font-normal">{totalCarbohydrates.amount}</span>
       </span>
-      <span class="font-black">{totalCarbohydrates.dailyValue}</span>
+      <span class="font-black">{totalCarbohydrates.dailyvalue}</span>
     </div>
 
     <div
@@ -185,7 +179,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
         {nData.dietaryFiber}
         {dietaryFiber.amount}
       </span>
-      <span class="font-black">{dietaryFiber.dailyValue}</span>
+      <span class="font-black">{dietaryFiber.dailyvalue}</span>
     </div>
 
     <div
@@ -204,7 +198,7 @@ const addedSugarsLabel = nData.addedSugars.replace(
       <span>
         {addedSugarsLabel}
       </span>
-      <span class="font-black">{addedSugars.dailyValue}</span>
+      <span class="font-black">{addedSugars.dailyvalue}</span>
     </div>
 
     <div
@@ -225,28 +219,28 @@ const addedSugarsLabel = nData.addedSugars.replace(
       class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
     >
       <span>{nData.vitaminD} {vitaminD.amount}</span>
-      <span class="font-semibold">{vitaminD.dailyValue}</span>
+      <span class="font-semibold">{vitaminD.dailyvalue}</span>
     </div>
 
     <div
       class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
     >
       <span>{nData.calcium} {calcium.amount}</span>
-      <span class="font-semibold">{calcium.dailyValue}</span>
+      <span class="font-semibold">{calcium.dailyvalue}</span>
     </div>
 
     <div
       class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
     >
       <span>{nData.iron} {iron.amount}</span>
-      <span class="font-semibold">{iron.dailyValue}</span>
+      <span class="font-semibold">{iron.dailyvalue}</span>
     </div>
 
     <div
       class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
     >
       <span>{nData.potassium} {potassium.amount}</span>
-      <span class="font-semibold">{potassium.dailyValue}</span>
+      <span class="font-semibold">{potassium.dailyvalue}</span>
     </div>
 
     <!-- Medium Bar -->
