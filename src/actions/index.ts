@@ -4,6 +4,7 @@ import { getReviews } from './reviews/getReviews.action';
 import {
   getProductsByCategory,
   getProductBySlug,
+  getProductById,
   getProductsForCategory,
   getProdcutBySlug,
 } from './products/products.action';
@@ -13,6 +14,7 @@ export const server = {
   getPlaces,
   getProductsByCategory,
   getProductBySlug,
+  getProductById,
   getProductsForCategory,
   getProdcutBySlug,
 };
