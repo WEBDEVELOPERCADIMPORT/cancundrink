@@ -1,0 +1,92 @@
+---
+import { Mail, Phone, ExternalLink } from "lucide-astro";
+import type { Lang } from "../../../i18n/config.i18n";
+import specsContent from "../../../data/site-specs-content.json";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const compData = specsContent[lang].specs.company;
+---
+
+<section
+  id="specs-company-section"
+  class="w-full flex justify-center py-4"
+  aria-label="Company Contact & Information"
+>
+  <div
+    class="w-full max-w-sm sm:max-w-xl bg-white rounded-3xl border border-gray-200/80 p-4 sm:p-4 shadow-sm flex flex-col items-center justify-center text-center space-y-8"
+  >
+    <!-- Contact Buttons (Email & Phone Icons) -->
+    <div class="flex items-center justify-center gap-6 sm:gap-10">
+      <!-- Email Button -->
+      <div class="flex flex-col items-center">
+        <a
+          href={`mailto:${compData.email}`}
+          title={compData.emailLabel}
+          aria-label={compData.emailLabel}
+          class="w-16 h-16 sm:w-20 sm:h-20 bg-gray-50 hover:bg-green-50 text-neutral-800 hover:text-green-cancun border-2 border-gray-200 hover:border-green-cancun rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center group active:scale-95"
+        >
+          <Mail
+            class="w-7 h-7 sm:w-9 sm:h-9 group-hover:scale-110 transition-transform"
+          />
+        </a>
+        <span class="text-xs sm:text-sm font-bold text-neutral-600 mt-2">
+          {compData.emailLabel}
+        </span>
+      </div>
+
+      <!-- Phone Button -->
+      <div class="flex flex-col items-center">
+        <a
+          href={compData.phone}
+          title={compData.phoneLabel}
+          aria-label={compData.phoneLabel}
+          class="w-16 h-16 sm:w-20 sm:h-20 bg-gray-50 hover:bg-green-50 text-neutral-800 hover:text-green-cancun border-2 border-gray-200 hover:border-green-cancun rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center group active:scale-95"
+        >
+          <Phone
+            class="w-7 h-7 sm:w-9 sm:h-9 group-hover:scale-110 transition-transform"
+          />
+        </a>
+        <span class="text-xs sm:text-sm font-bold text-neutral-600 mt-2">
+          {compData.phoneLabel}
+        </span>
+      </div>
+    </div>
+
+    <!-- About the CAD Import Inc Link -->
+    <div class="pt-6 border-t border-gray-100 w-full flex justify-center">
+      <a
+        href={compData.aboutUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-neutral-700 hover:text-green-cancun transition-colors group"
+      >
+        <span>{compData.aboutLinkLabel}</span>
+        <ExternalLink
+          class="w-4 h-4 text-green-cancun group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+        />
+      </a>
+    </div>
+
+    <!-- Integrated Google Map -->
+    <div
+      class="w-full pt-4 border-t border-gray-100 flex flex-col items-center"
+    >
+      <div
+        class="w-full rounded-2xl overflow-hidden border border-gray-200 shadow-sm h-64 sm:h-80"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4301.900927716216!2d-75.59401045162461!3d39.65986897173193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c7038e7c1a5cf7%3A0xfebf029a703ae571!2s650%20Centerpoint%20Blvd%2C%20New%20Castle%2C%20DE%2019720%2C%20USA!5e0!3m2!1sen!2sgt!4v1791829087232!5m2!1sen!2sgt"
+          class="w-full h-full border-0"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="CAD Import Inc Google Map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -5,6 +5,7 @@
     },
     "product": {
       "title": "Detalle del producto",
+      "specsHint": "Ver specs",
       "returnHome": "Volver al Inicio",
       "skuLabel": "SKU",
       "categoryLabel": "Categoría"
@@ -28,6 +29,7 @@
     },
     "product": {
       "title": "Product details",
+      "specsHint": "View specs",
       "returnHome": "Return to Home",
       "skuLabel": "SKU",
       "categoryLabel": "Category"

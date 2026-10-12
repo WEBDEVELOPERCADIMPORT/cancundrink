@@ -1,0 +1,156 @@
+---
+import Layout from "../../../../../layouts/Layout.astro";
+import { LANGUAGES, type Lang } from "../../../../../i18n/config.i18n";
+import categoriesContent from "../../../../../data/site-categories-content.json";
+import specsContent from "../../../../../data/site-specs-content.json";
+import { actions } from "astro:actions";
+import SpecsView from "../../../../../components/specs/sections/SpecsView.astro";
+import "aos/dist/aos.css";
+
+const lang = Astro.params.lang as Lang;
+const categorySlug = Astro.params.category as string;
+const productSlug = (Astro.params.product || Astro.params.slug) as string;
+const specsParam = (Astro.params.specs || "").toLowerCase();
+
+if (
+    !lang ||
+    !(lang in LANGUAGES) ||
+    !(lang in specsContent) ||
+    !(lang in categoriesContent)
+) {
+    return Astro.redirect("/404");
+}
+
+if (!categorySlug || !productSlug) {
+    return Astro.redirect("/404");
+}
+
+// Redirecciones amigables para alias o ruta base /specs
+if (specsParam === "specs" || specsParam === "nutricion") {
+    return Astro.redirect(`/${lang}/${categorySlug}/${productSlug}/nutrition`);
+}
+if (specsParam === "ingredientes") {
+    return Astro.redirect(`/${lang}/${categorySlug}/${productSlug}/ingredients`);
+}
+if (specsParam === "empresa") {
+    return Astro.redirect(`/${lang}/${categorySlug}/${productSlug}/company`);
+}
+
+const validTabs = ["nutrition", "ingredients", "company"] as const;
+type TabType = typeof validTabs[number];
+
+if (!validTabs.includes(specsParam as TabType)) {
+    return Astro.redirect("/404");
+}
+
+const activeTab = specsParam as TabType;
+
+const categories = categoriesContent[lang].categories.categories as Array<{
+    slugs: string[];
+    title: string;
+}>;
+
+const categoryData = categories.find((item) =>
+    item.slugs.includes(categorySlug),
+);
+
+if (!categoryData) {
+    return Astro.redirect("/404");
+}
+
+const { data: productResponse } = await Astro.callAction(
+    actions.getProductBySlug,
+    {
+        lang,
+        categorySlug,
+        productSlug,
+    },
+);
+
+const product = productResponse?.data ?? null;
+
+if (!product) {
+    return Astro.redirect("/404");
+}
+
+const specsData = specsContent[lang].specs;
+const tabTitle = specsData.tabs[activeTab] ?? specsData.tabs.nutrition;
+
+const pageTitle = `${product.name} - ${tabTitle} | ${categoryData.title} | Cancun Drink`;
+const pageDescription = `${product.name} - ${tabTitle}. ${specsData.skuLabel}: ${product.sku}.`;
+const pageImage = product.image;
+
+const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Product",
+            name: product.name,
+            sku: product.sku,
+            image: `https://cancundrink.com${product.image}`,
+            category: categoryData.title,
+            brand: {
+                "@type": "Brand",
+                name: "Cancun Drink",
+            },
+            url: `https://cancundrink.com/${lang}/${categorySlug}/${productSlug}/${activeTab}`,
+        },
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: lang === "es" ? "Inicio" : "Home",
+                    item: `https://cancundrink.com/${lang}/`,
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: categoryData.title,
+                    item: `https://cancundrink.com/${lang}/${categorySlug}`,
+                },
+                {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: product.name,
+                    item: `https://cancundrink.com/${lang}/${categorySlug}/${productSlug}`,
+                },
+                {
+                    "@type": "ListItem",
+                    position: 4,
+                    name: tabTitle,
+                    item: `https://cancundrink.com/${lang}/${categorySlug}/${productSlug}/${activeTab}`,
+                },
+            ],
+        },
+    ],
+};
+---
+
+<Layout
+    title={pageTitle}
+    lang={lang}
+    description={pageDescription}
+    image={pageImage}
+    schema={schema}
+    canonicalPath={`/${lang}/${categorySlug}/${productSlug}/${activeTab}`}
+>
+    <SpecsView
+        lang={lang}
+        category={categorySlug}
+        categoryTitle={categoryData.title}
+        product={product}
+        activeTab={activeTab}
+    />
+</Layout>
+
+<script>
+    import AOS from "aos";
+
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+    });
+</script>

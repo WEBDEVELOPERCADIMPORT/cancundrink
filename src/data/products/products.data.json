@@ -1,0 +1,1674 @@
+{
+  "es": [
+    {
+      "id": 1,
+      "name": "Bebida de leche de coco Cancún con nata de coco y fresa 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-280ml-x-24",
+      "sku": "01-0328",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Deliciosa bebida refrescante de leche de coco Cancún con trocitos masticables de nata de coco y un toque dulce a fresa.",
+      "features": [
+        "Presentación de 280ml (Paquete de 24 piezas)",
+        "Elaborada con auténtica nata de coco",
+        "Sabor refrescante a fresa natural",
+        "Bebida tropical lista para disfrutar fría"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Saborizante artificial a fresa",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Rojo allura AC (FD&C Rojo 40)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 1 porción por envase",
+        "calories": 130,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "16g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "15g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bebida de leche de coco Cancún con nata de coco y fresa 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-470ml-x-12",
+      "sku": "01-0271",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Bebida de leche de coco Cancún con trocitos de nata de coco y sabor a fresa en botella de 470ml para una frescura prolongada.",
+      "features": [
+        "Presentación de 470ml (Paquete de 12 piezas)",
+        "Trocitos masticables de nata de coco",
+        "Sabor a fresa suave y dulce",
+        "Ideal para calmar la sed en días calurosos"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Saborizante artificial a fresa",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Rojo allura AC (FD&C Rojo 40)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 2 porciones por envase",
+        "calories": 130,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "16g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "15g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Bebida de leche de coco Cancún con nata de coco y mango 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-280ml-x-24",
+      "sku": "01-0329",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Una explosión tropical que combina la cremosidad de la leche de coco con nata de coco y la dulzura del mango.",
+      "features": [
+        "Presentación de 280ml (Paquete de 24 piezas)",
+        "Con nata de coco natural",
+        "Delicioso sabor frutal a mango",
+        "Equilibrio perfecto de textura y sabor"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Jugo concentrado de mango",
+        "Saborizante artificial a mango",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Amarillo ocaso FCF (FD&C Amarillo 6)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 1 porción por envase",
+        "calories": 130,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "6g",
+          "dailyValue": "8%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "5g",
+          "dailyValue": "25%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "80mg",
+          "dailyValue": "3%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "17g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "16g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "230mg",
+          "dailyValue": "5%"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bebida de leche de coco Cancún con nata de coco y mango 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-470ml-x-12",
+      "sku": "01-0270",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Disfruta de más sabor tropical con esta presentación de 470ml de leche de coco Cancún con nata de coco y mango.",
+      "features": [
+        "Presentación de 470ml (Paquete de 12 piezas)",
+        "Nata de coco con textura suave y masticable",
+        "Intenso sabor tropical a mango",
+        "Refresco perfecto para cualquier momento"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Jugo concentrado de mango",
+        "Saborizante artificial a mango",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Amarillo ocaso FCF (FD&C Amarillo 6)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 2 porciones por envase",
+        "calories": 130,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "6g",
+          "dailyValue": "8%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "5g",
+          "dailyValue": "25%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "80mg",
+          "dailyValue": "3%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "17g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "16g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "230mg",
+          "dailyValue": "5%"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bebida de leche de coco Cancún con nata de coco sabor original 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-280ml-x-24",
+      "sku": "01-0327",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "La receta tradicional y cremosa de bebida de leche de coco Cancún con auténtica nata de coco natural.",
+      "features": [
+        "Presentación de 280ml (Paquete de 24 piezas)",
+        "Sabor original clásico de coco",
+        "Auténtica nata de coco nutritiva",
+        "Libre de sabores artificiales invasivos"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Saborizante natural y artificial a coco",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Goma gellan"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 1 porción por envase",
+        "calories": 140,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "15g",
+          "dailyValue": "5%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "14g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "13g",
+          "dailyValue": "26%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Bebida de leche de coco Cancún con nata de coco sabor original 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-470ml-x-12",
+      "sku": "01-0269",
+      "categorySlug": "leches-coco",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Generosa presentación de 470ml con todo el sabor tradicional de la leche de coco y nata de coco Cancún.",
+      "features": [
+        "Presentación de 470ml (Paquete de 12 piezas)",
+        "Receta original de coco",
+        "Trocitos de nata de coco que deleitan tu paladar",
+        "Bebida reconfortante y refrescante"
+      ],
+      "image": "/images/leches-coco/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua",
+        "Nata de coco",
+        "Azúcar",
+        "Leche de coco",
+        "Saborizante natural y artificial a coco",
+        "Ácido cítrico",
+        "Lactato de calcio",
+        "Goma gellan"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 2 porciones por envase",
+        "calories": 140,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "15g",
+          "dailyValue": "5%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "14g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "13g",
+          "dailyValue": "26%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Cancún Agua de Coco y Mango 250ml 8.5oz x 24",
+      "slug": "cancun-agua-de-coco-y-mango-250ml-8-5oz-24",
+      "sku": "01-0183",
+      "categorySlug": "agua-coco-y-mango",
+      "categories": [
+        "agua-coco-y-mango",
+        "coconut-and-mango-water"
+      ],
+      "description": "Refrescante combinación de agua de coco hidratante y jugo de mango tropical Cancún en práctica botella de 250ml.",
+      "features": [
+        "Presentación de 250ml / 8.5oz (Paquete de 24 piezas)",
+        "Hidratación natural con electrolitos",
+        "Toque tropical de jugo de mango",
+        "Ligera, deliciosa y revitalizante"
+      ],
+      "image": "/images/agua-coco-y-mango/products/cancun-agua-de-coco-y-mango-250ml-8-5oz-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua de coco natural",
+        "Jugo concentrado de mango",
+        "Azúcar de caña",
+        "Ácido ascórbico (Vitamina C)"
+      ],
+      "nutrition": {
+        "servingSize": "8.5 FL OZ (250 mL)",
+        "servingsPerContainer": "1 porción por envase",
+        "calories": 90,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "45mg",
+          "dailyValue": "2%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "22g",
+          "dailyValue": "8%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "20g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "8g",
+          "dailyValue": "16%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "0g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "15mg",
+          "dailyValue": "1%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.4mg",
+          "dailyValue": "2%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "380mg",
+          "dailyValue": "8%"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Cancún Agua de Coco y Mango 1L 33oz x 12",
+      "slug": "cancun-agua-de-coco-y-mango-1l-33oz-12",
+      "sku": "01-0382",
+      "categorySlug": "agua-coco-y-mango",
+      "categories": [
+        "agua-coco-y-mango",
+        "coconut-and-mango-water"
+      ],
+      "description": "Presentación familiar de 1 litro de agua de coco con jugo de mango Cancún, perfecta para compartir la frescura en el hogar.",
+      "features": [
+        "Presentación de 1L / 33oz (Paquete de 12 piezas)",
+        "Tamaño familiar para compartir",
+        "Agua de coco rica en minerales y sabor mango",
+        "Sin aditivos artificiales innecesarios"
+      ],
+      "image": "/images/agua-coco-y-mango/products/cancun-agua-de-coco-y-mango-1l-33oz-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Agua de coco natural",
+        "Jugo concentrado de mango",
+        "Azúcar de caña",
+        "Ácido ascórbico (Vitamina C)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "Alrededor 4 porciones por envase",
+        "calories": 90,
+        "totalFat": {
+          "label": "Grasas Totales",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "saturatedFat": {
+          "label": "Grasas Saturadas",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "transFat": {
+          "label": "Grasas Trans",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Colesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodio",
+          "amount": "45mg",
+          "dailyValue": "2%"
+        },
+        "totalCarbohydrates": {
+          "label": "Carbohidratos Totales",
+          "amount": "22g",
+          "dailyValue": "8%"
+        },
+        "dietaryFiber": {
+          "label": "Fibra Dietética",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Azúcares Totales",
+          "amount": "20g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Incluye Azúcares Añadidos",
+          "amount": "8g",
+          "dailyValue": "16%"
+        },
+        "protein": {
+          "label": "Proteína",
+          "amount": "0g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamina D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcio",
+          "amount": "15mg",
+          "dailyValue": "1%"
+        },
+        "iron": {
+          "label": "Hierro",
+          "amount": "0.4mg",
+          "dailyValue": "2%"
+        },
+        "potassium": {
+          "label": "Potasio",
+          "amount": "380mg",
+          "dailyValue": "8%"
+        }
+      }
+    }
+  ],
+  "en": [
+    {
+      "id": 1,
+      "name": "Bebida de leche de coco Cancún con nata de coco y fresa 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-280ml-x-24",
+      "sku": "01-0328",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Refreshing Cancun coconut milk drink combined with smooth nata de coco jelly bits and sweet strawberry flavor.",
+      "features": [
+        "Size: 280ml bottle (Pack of 24)",
+        "Made with authentic nata de coco bits",
+        "Refreshing sweet strawberry taste",
+        "Tropical ready-to-drink beverage best served chilled"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Artificial strawberry flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Allura red AC (FD&C Red 40)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 1 serving per container",
+        "calories": 130,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "16g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "15g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bebida de leche de coco Cancún con nata de coco y fresa 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-470ml-x-12",
+      "sku": "01-0271",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Cancun coconut milk beverage with chewy nata de coco and delightful strawberry flavor in a 470ml bottle for longer refreshment.",
+      "features": [
+        "Size: 470ml bottle (Pack of 12)",
+        "Chewy nata de coco bits in every sip",
+        "Smooth and sweet strawberry aroma",
+        "Ideal for daily hydration on sunny days"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-fresa-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Artificial strawberry flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Allura red AC (FD&C Red 40)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 2 servings per container",
+        "calories": 130,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "16g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "15g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Bebida de leche de coco Cancún con nata de coco y mango 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-280ml-x-24",
+      "sku": "01-0329",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "An exotic tropical blend combining smooth coconut milk, juicy mango flavor, and chewy nata de coco pieces.",
+      "features": [
+        "Size: 280ml bottle (Pack of 24)",
+        "Infused with natural nata de coco",
+        "Delicious tropical mango taste",
+        "Perfect balance of silky texture and fruity sweetness"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Mango juice concentrate",
+        "Artificial mango flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Sunset yellow FCF (FD&C Yellow 6)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 1 serving per container",
+        "calories": 130,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "6g",
+          "dailyValue": "8%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "5g",
+          "dailyValue": "25%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "80mg",
+          "dailyValue": "3%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "17g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "16g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "230mg",
+          "dailyValue": "5%"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bebida de leche de coco Cancún con nata de coco y mango 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-470ml-x-12",
+      "sku": "01-0270",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Enjoy extra tropical flavor with this 470ml Cancun coconut milk drink featuring nata de coco and luscious mango.",
+      "features": [
+        "Size: 470ml bottle (Pack of 12)",
+        "Satisfying chewy nata de coco texture",
+        "Rich and vibrant mango flavor",
+        "Refreshing tropical beverage for on-the-go moments"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-mango-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Mango juice concentrate",
+        "Artificial mango flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Sunset yellow FCF (FD&C Yellow 6)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 2 servings per container",
+        "calories": 130,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "6g",
+          "dailyValue": "8%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "5g",
+          "dailyValue": "25%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "80mg",
+          "dailyValue": "3%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "17g",
+          "dailyValue": "6%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "16g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "14g",
+          "dailyValue": "28%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "230mg",
+          "dailyValue": "5%"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bebida de leche de coco Cancún con nata de coco sabor original 280ml x 24",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-280ml-x-24",
+      "sku": "01-0327",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "The classic, creamy original Cancun coconut milk beverage with authentic chewy nata de coco bits.",
+      "features": [
+        "Size: 280ml bottle (Pack of 24)",
+        "Traditional original coconut flavor",
+        "Wholesome nata de coco pieces",
+        "Silky texture with a crisp finish"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-280ml-x-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Natural and artificial coconut flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Gellan gum"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 1 serving per container",
+        "calories": 140,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "15g",
+          "dailyValue": "5%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "14g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "13g",
+          "dailyValue": "26%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Bebida de leche de coco Cancún con nata de coco sabor original 470ml x 12",
+      "slug": "bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-470ml-x-12",
+      "sku": "01-0269",
+      "categorySlug": "coconut-milks",
+      "categories": [
+        "leches-coco",
+        "coconut-milks"
+      ],
+      "description": "Generous 470ml bottle featuring the pure, traditional recipe of Cancun coconut milk with tender nata de coco.",
+      "features": [
+        "Size: 470ml bottle (Pack of 12)",
+        "Original recipe with authentic coconut flavor",
+        "Chewy nata de coco pieces in every bottle",
+        "Refreshing and satisfying beverage"
+      ],
+      "image": "/images/coconut-milks/products/bebida-de-leche-de-coco-cancun-con-nata-de-coco-original-470ml-x-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Water",
+        "Nata de coco",
+        "Sugar",
+        "Coconut milk",
+        "Natural and artificial coconut flavor",
+        "Citric acid",
+        "Calcium lactate",
+        "Gellan gum"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 2 servings per container",
+        "calories": 140,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "7g",
+          "dailyValue": "9%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "6g",
+          "dailyValue": "30%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "85mg",
+          "dailyValue": "4%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "15g",
+          "dailyValue": "5%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "14g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "13g",
+          "dailyValue": "26%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "<1g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "20mg",
+          "dailyValue": "2%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.8mg",
+          "dailyValue": "4%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "240mg",
+          "dailyValue": "6%"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Cancún Agua de Coco y Mango 250ml 8.5oz x 24",
+      "slug": "cancun-agua-de-coco-y-mango-250ml-8-5oz-24",
+      "sku": "01-0183",
+      "categorySlug": "coconut-and-mango-water",
+      "categories": [
+        "agua-coco-y-mango",
+        "coconut-and-mango-water"
+      ],
+      "description": "Crisp natural coconut water blended with sweet mango juice in a handy 250ml bottle for healthy on-the-go hydration.",
+      "features": [
+        "Size: 250ml / 8.5oz (Pack of 24)",
+        "Natural hydration loaded with electrolytes",
+        "Tropical splash of natural mango juice",
+        "Light, crisp, and revitalizing"
+      ],
+      "image": "/images/coconut-and-mango-water/products/cancun-agua-de-coco-y-mango-250ml-8-5oz-24.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Natural coconut water",
+        "Mango juice concentrate",
+        "Cane sugar",
+        "Ascorbic acid (Vitamin C)"
+      ],
+      "nutrition": {
+        "servingSize": "8.5 FL OZ (250 mL)",
+        "servingsPerContainer": "1 serving per container",
+        "calories": 90,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "45mg",
+          "dailyValue": "2%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "22g",
+          "dailyValue": "8%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "20g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "8g",
+          "dailyValue": "16%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "0g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "15mg",
+          "dailyValue": "1%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.4mg",
+          "dailyValue": "2%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "380mg",
+          "dailyValue": "8%"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Cancún Agua de Coco y Mango 1L 33oz x 12",
+      "slug": "cancun-agua-de-coco-y-mango-1l-33oz-12",
+      "sku": "01-0382",
+      "categorySlug": "coconut-and-mango-water",
+      "categories": [
+        "agua-coco-y-mango",
+        "coconut-and-mango-water"
+      ],
+      "description": "Family-size 1 liter Cancun coconut water with mango juice, ideal for sharing pure tropical hydration with everyone.",
+      "features": [
+        "Size: 1L / 33oz bottle (Pack of 12)",
+        "Family size ideal for meal sharing",
+        "Mineral-rich coconut water with real mango juice",
+        "Free from unnecessary artificial additives"
+      ],
+      "image": "/images/coconut-and-mango-water/products/cancun-agua-de-coco-y-mango-1l-33oz-12.png",
+      "linkVasAlSuper": "",
+      "ingredients": [
+        "Natural coconut water",
+        "Mango juice concentrate",
+        "Cane sugar",
+        "Ascorbic acid (Vitamin C)"
+      ],
+      "nutrition": {
+        "servingSize": "8 FL OZ (240 mL)",
+        "servingsPerContainer": "About 4 servings per container",
+        "calories": 90,
+        "totalFat": {
+          "label": "Total Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "saturatedFat": {
+          "label": "Saturated Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "transFat": {
+          "label": "Trans Fat",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "cholesterol": {
+          "label": "Cholesterol",
+          "amount": "0mg",
+          "dailyValue": "0%"
+        },
+        "sodium": {
+          "label": "Sodium",
+          "amount": "45mg",
+          "dailyValue": "2%"
+        },
+        "totalCarbohydrates": {
+          "label": "Total Carbohydrates",
+          "amount": "22g",
+          "dailyValue": "8%"
+        },
+        "dietaryFiber": {
+          "label": "Dietary Fiber",
+          "amount": "0g",
+          "dailyValue": "0%"
+        },
+        "totalSugars": {
+          "label": "Total Sugars",
+          "amount": "20g",
+          "dailyValue": ""
+        },
+        "addedSugars": {
+          "label": "Includes Added Sugars",
+          "amount": "8g",
+          "dailyValue": "16%"
+        },
+        "protein": {
+          "label": "Protein",
+          "amount": "0g",
+          "dailyValue": ""
+        },
+        "vitaminD": {
+          "label": "Vitamin D",
+          "amount": "0mcg",
+          "dailyValue": "0%"
+        },
+        "calcium": {
+          "label": "Calcium",
+          "amount": "15mg",
+          "dailyValue": "1%"
+        },
+        "iron": {
+          "label": "Iron",
+          "amount": "0.4mg",
+          "dailyValue": "2%"
+        },
+        "potassium": {
+          "label": "Potassium",
+          "amount": "380mg",
+          "dailyValue": "8%"
+        }
+      }
+    }
+  ]
+}

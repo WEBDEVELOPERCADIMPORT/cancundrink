@@ -1,0 +1,75 @@
+---
+import { Utensils, ScrollText, Building2 } from "lucide-astro";
+import type { Lang } from "../../../i18n/config.i18n";
+import specsContent from "../../../data/site-specs-content.json";
+
+interface Props {
+  lang: Lang;
+  category: string;
+  productSlug: string;
+  activeTab?: "nutrition" | "ingredients" | "company";
+}
+
+const { lang, category, productSlug, activeTab = "nutrition" } = Astro.props;
+const specsData = specsContent[lang].specs;
+
+const tabs = [
+  {
+    id: "nutrition",
+    slug: "nutrition",
+    label: specsData.tabs.nutrition,
+    icon: Utensils,
+  },
+  {
+    id: "ingredients",
+    slug: "ingredients",
+    label: specsData.tabs.ingredients,
+    icon: ScrollText,
+  },
+  {
+    id: "company",
+    slug: "company",
+    label: specsData.tabs.company,
+    icon: Building2,
+  },
+];
+---
+
+<nav
+  class="w-full flex justify-center mb-10"
+  aria-label="Especificaciones del producto"
+>
+  <div
+    class="grid grid-cols-3 gap-2.5 sm:gap-6 w-full max-w-8xl"
+    role="tablist"
+  >
+    {
+      tabs.map((tab) => {
+        const Icon = tab.icon;
+        const isActive = tab.id === activeTab;
+        const tabHref = `/${lang}/${category}/${productSlug}/${tab.slug}`;
+
+        return (
+          <a
+            href={tabHref}
+            role="tab"
+            aria-selected={isActive ? "true" : "false"}
+            class:list={[
+              "flex flex-col items-center justify-center p-3.5 sm:p-6 rounded-2xl border-2 transition-all duration-300 text-center group select-none shadow-sm no-underline",
+              isActive
+                ? "bg-green-50/70 border-green-cancun text-green-cancun shadow-md scale-[1.02] font-bold"
+                : "bg-white border-gray-200 text-neutral-600 hover:border-gray-300 hover:text-black-cancun hover:bg-gray-50/80 hover:shadow font-semibold",
+            ]}
+          >
+            <div class="mb-1.5 sm:mb-2 transition-transform duration-300 group-hover:scale-110">
+              <Icon class="w-6 h-6 sm:w-8 sm:h-8" />
+            </div>
+            <span class="text-xs sm:text-base font-extrabold tracking-wide uppercase">
+              {tab.label}
+            </span>
+          </a>
+        );
+      })
+    }
+  </div>
+</nav>

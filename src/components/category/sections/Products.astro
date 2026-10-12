@@ -3,16 +3,12 @@ import type { Lang } from "../../../i18n/config.i18n";
 import content from "../../../data/site-categories-content.json";
 import productPageContent from "../../../data/site-product-content.json";
 import ProductCard from "../../utils/ProductCard.astro";
-import { MoveLeft, TreePalm } from "lucide-astro";
+import { MoveLeft } from "lucide-astro";
+import type { Product } from "../../../types/product";
+export type { Product };
 
-export interface Product {
-    name: string;
-    slug: string;
-    sku: string;
-    categories: string[];
-    image: string;
-    linkVasAlSuper?: string;
-}
+
+
 
 interface Props {
     lang: Lang;

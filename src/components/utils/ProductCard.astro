@@ -3,15 +3,8 @@ import type { Lang } from "../../i18n/config.i18n";
 import BuyStoreButton from "./BuyStoreButton.astro";
 import ViewProductButton from "./ViewProductButton.astro";
 
-interface Product {
-  id?: number;
-  name: string;
-  slug: string;
-  sku: string;
-  categories: string[];
-  image: string;
-  linkVasAlSuper?: string;
-}
+import type { Product } from "../../types/product";
+
 
 interface Props {
   product: Product;

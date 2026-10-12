@@ -1,17 +1,13 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
 import content from "../../../data/site-product-content.json";
-import ProductCard from "../../utils/ProductCard.astro";
 
-interface Product {
-  id?: number;
-  name: string;
-  slug: string;
-  sku: string;
-  categories: string[];
-  image: string;
-  linkVasAlSuper?: string;
-}
+import ProductCard from "../../utils/ProductCard.astro";
+import type { Product } from "../../../types/product";
+
+
+
+
 
 interface Props {
   lang: Lang;

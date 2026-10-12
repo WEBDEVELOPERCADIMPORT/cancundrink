@@ -1,0 +1,260 @@
+---
+import type { Lang } from "../../../i18n/config.i18n";
+import specsContent from "../../../data/site-specs-content.json";
+import type { NutritionFacts } from "../../../types/product";
+
+interface Props {
+  lang: Lang;
+  nutrition?: NutritionFacts;
+}
+
+const { lang, nutrition } = Astro.props;
+const nData = specsContent[lang].specs.nutrition;
+
+// Extraer texto de porciones según el idioma activo
+let servingsText = nData.servingsDefault;
+if (nutrition?.servingsPerContainer) {
+  if (nutrition.servingsPerContainer.includes("/")) {
+    const parts = nutrition.servingsPerContainer
+      .split("/")
+      .map((s) => s.trim());
+    servingsText = lang === "es" ? parts[1] || parts[0] : parts[0];
+  } else {
+    servingsText = nutrition.servingsPerContainer;
+  }
+}
+
+const servingSizeText = nutrition?.servingSize || "8 FL OZ (240 mL)";
+const caloriesVal = nutrition?.calories ?? "130";
+
+const totalFat = nutrition?.totalFat ?? { amount: "7g", dailyValue: "9%" };
+const saturatedFat = nutrition?.saturatedFat ?? {
+  amount: "6g",
+  dailyValue: "30%",
+};
+const transFat = nutrition?.transFat ?? { amount: "0g", dailyValue: "0%" };
+const cholesterol = nutrition?.cholesterol ?? {
+  amount: "0mg",
+  dailyValue: "0%",
+};
+const sodium = nutrition?.sodium ?? { amount: "85mg", dailyValue: "4%" };
+const totalCarbohydrates = nutrition?.totalCarbohydrates ?? {
+  amount: "16g",
+  dailyValue: "6%",
+};
+const dietaryFiber = nutrition?.dietaryFiber ?? {
+  amount: "0g",
+  dailyValue: "0%",
+};
+const totalSugars = nutrition?.totalSugars ?? { amount: "15g", dailyValue: "" };
+const addedSugars = nutrition?.addedSugars ?? {
+  amount: "14g",
+  dailyValue: "28%",
+};
+const protein = nutrition?.protein ?? { amount: "<1g", dailyValue: "" };
+
+const vitaminD = nutrition?.vitaminD ?? { amount: "0mcg", dailyValue: "0%" };
+const calcium = nutrition?.calcium ?? { amount: "20mg", dailyValue: "2%" };
+const iron = nutrition?.iron ?? { amount: "0.8mg", dailyValue: "4%" };
+const potassium = nutrition?.potassium ?? { amount: "240mg", dailyValue: "6%" };
+
+const addedSugarsLabel = nData.addedSugars.replace(
+  "{amount}",
+  addedSugars.amount,
+);
+---
+
+<section
+  id="specs-nutrition-section"
+  class="w-full flex justify-center py-4"
+  aria-label={nData.title}
+>
+  <!-- FDA Nutrition Facts Box (Idioma exclusivo según selección) -->
+  <div
+    class="w-full max-w-sm sm:max-w-xl bg-white border-[2.5px] border-black p-4 sm:p-5 font-sans text-black shadow-lg"
+  >
+    <!-- Header en un solo idioma -->
+    <h2
+      class="text-3xl sm:text-4xl font-black leading-none tracking-tight pb-1"
+    >
+      {nData.title}
+    </h2>
+
+    <!-- Servings info -->
+    <div class="text-xs sm:text-sm font-semibold leading-tight pt-1">
+      {servingsText}
+    </div>
+    <div
+      class="flex justify-between items-baseline font-bold text-xs sm:text-sm pb-1"
+    >
+      <span>{nData.servingSize}</span>
+      <span class="text-right font-black">{servingSizeText}</span>
+    </div>
+
+    <!-- Thick Bar -->
+    <div class="h-2.5 bg-black my-1"></div>
+
+    <!-- Amount per serving -->
+    <div class="text-[11px] font-bold leading-tight mb-0.5">
+      {nData.amountPerServing}
+    </div>
+
+    <!-- Calories row -->
+    <div class="flex justify-between items-baseline my-1">
+      <span class="text-2xl sm:text-3xl font-black leading-none">
+        {nData.calories}
+      </span>
+      <span class="text-4xl sm:text-5xl font-black leading-none">
+        {caloriesVal}
+      </span>
+    </div>
+
+    <!-- Medium Bar -->
+    <div class="h-1 bg-black my-1"></div>
+
+    <!-- % DV header -->
+    <div class="text-right text-xs font-black pb-0.5">
+      {nData.dailyValue}
+    </div>
+
+    <!-- Nutrients list -->
+    <div
+      class="border-t border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span class="font-bold">
+        {nData.totalFat}
+        <span class="font-normal">{totalFat.amount}</span>
+      </span>
+      <span class="font-black">{totalFat.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 pl-4 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>
+        {nData.saturatedFat}
+        {saturatedFat.amount}
+      </span>
+      <span class="font-black">{saturatedFat.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 pl-4 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>
+        {nData.transFat}
+        {transFat.amount}
+      </span>
+      <span class="font-black">{transFat.dailyValue || ""}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span class="font-bold">
+        {nData.cholesterol}
+        <span class="font-normal">{cholesterol.amount}</span>
+      </span>
+      <span class="font-black">{cholesterol.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span class="font-bold">
+        {nData.sodium}
+        <span class="font-normal">{sodium.amount}</span>
+      </span>
+      <span class="font-black">{sodium.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span class="font-bold">
+        {nData.totalCarbohydrates}
+        <span class="font-normal">{totalCarbohydrates.amount}</span>
+      </span>
+      <span class="font-black">{totalCarbohydrates.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 pl-4 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>
+        {nData.dietaryFiber}
+        {dietaryFiber.amount}
+      </span>
+      <span class="font-black">{dietaryFiber.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 pl-4 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>
+        {nData.totalSugars}
+        {totalSugars.amount}
+      </span>
+      <span></span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 pl-8 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>
+        {addedSugarsLabel}
+      </span>
+      <span class="font-black">{addedSugars.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-t border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span class="font-bold">
+        {nData.protein}
+        <span class="font-normal">{protein.amount}</span>
+      </span>
+      <span></span>
+    </div>
+
+    <!-- Thick Bar -->
+    <div class="h-2.5 bg-black my-1"></div>
+
+    <!-- Vitamins & Minerals -->
+    <div
+      class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>{nData.vitaminD} {vitaminD.amount}</span>
+      <span class="font-semibold">{vitaminD.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>{nData.calcium} {calcium.amount}</span>
+      <span class="font-semibold">{calcium.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>{nData.iron} {iron.amount}</span>
+      <span class="font-semibold">{iron.dailyValue}</span>
+    </div>
+
+    <div
+      class="border-b border-black py-1 flex justify-between items-baseline text-xs sm:text-sm"
+    >
+      <span>{nData.potassium} {potassium.amount}</span>
+      <span class="font-semibold">{potassium.dailyValue}</span>
+    </div>
+
+    <!-- Medium Bar -->
+    <div class="h-1 bg-black my-1"></div>
+
+    <!-- Footnote en un solo idioma -->
+    <p class="text-[10px] leading-tight text-neutral-800 pt-1 font-sans">
+      {nData.footnote}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,104 @@
+{
+  "es": {
+    "specs": {
+      "returnHome": "Volver al inicio",
+      "skuLabel": "SKU",
+      "tabs": {
+        "nutrition": "Nutrición",
+        "ingredients": "Ingredientes",
+        "company": "Compañía"
+      },
+      "nutrition": {
+        "title": "Datos de Nutrición",
+        "servingsDefault": "Alrededor de 2 porciones por envase",
+        "servingSize": "Tamaño por ración",
+        "amountPerServing": "Cantidad por porción",
+        "calories": "Calorías",
+        "dailyValue": "% VD*",
+        "totalFat": "Grasas Totales",
+        "saturatedFat": "Grasas Saturadas",
+        "transFat": "Grasas Trans",
+        "cholesterol": "Colesterol",
+        "sodium": "Sodio",
+        "totalCarbohydrates": "Carbohidratos Totales",
+        "dietaryFiber": "Fibra Dietética",
+        "totalSugars": "Azúcares Totales",
+        "addedSugars": "Incluye {amount} de Azúcares Añadidos",
+        "protein": "Proteína",
+        "vitaminD": "Vitamina D",
+        "calcium": "Calcio",
+        "iron": "Hierro",
+        "potassium": "Potasio",
+        "footnote": "* El % del Valor Diario (VD) le indica cuánto contribuye un nutriente en una porción de alimento a la dieta diaria. Se utilizan 2,000 calorías al día para consejos de nutrición general.",
+        "noData": "Información nutricional no disponible para este producto."
+      },
+      "ingredients": {
+        "title": "Ingredientes",
+        "subtitle": "Seleccionados cuidadosamente para ofrecer la máxima frescura y sabor tropical auténtico.",
+        "naturalNotice": "Elaborado con fruta natural y estándares internacionales de calidad.",
+        "noData": "Lista de ingredientes no disponible actualmente para este producto."
+      },
+      "company": {
+        "title": "CAD Import Inc",
+        "emailLabel": "Email",
+        "email": "info@cadimportinc.com",
+        "phoneLabel": "Teléfono",
+        "phone": "tel:+18000000000",
+        "phoneDisplay": "+1 (800) 000-0000",
+        "aboutLinkLabel": "About the CAD Import Inc",
+        "aboutUrl": "https://cadimportinc.com"
+      }
+    }
+  },
+  "en": {
+    "specs": {
+      "returnHome": "Return to Home",
+      "skuLabel": "SKU",
+      "tabs": {
+        "nutrition": "Nutrition",
+        "ingredients": "Ingredients",
+        "company": "Company"
+      },
+      "nutrition": {
+        "title": "Nutrition Facts",
+        "servingsDefault": "About 2 servings per container",
+        "servingSize": "Serving size",
+        "amountPerServing": "Amount per serving",
+        "calories": "Calories",
+        "dailyValue": "% DV*",
+        "totalFat": "Total Fat",
+        "saturatedFat": "Saturated Fat",
+        "transFat": "Trans Fat",
+        "cholesterol": "Cholesterol",
+        "sodium": "Sodium",
+        "totalCarbohydrates": "Total Carbohydrate",
+        "dietaryFiber": "Dietary Fiber",
+        "totalSugars": "Total Sugars",
+        "addedSugars": "Includes {amount} Added Sugars",
+        "protein": "Protein",
+        "vitaminD": "Vitamin D",
+        "calcium": "Calcium",
+        "iron": "Iron",
+        "potassium": "Potassium",
+        "footnote": "* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.",
+        "noData": "Nutrition facts are currently not available for this product."
+      },
+      "ingredients": {
+        "title": "Ingredients",
+        "subtitle": "Carefully selected to deliver maximum freshness and authentic tropical taste.",
+        "naturalNotice": "Crafted with natural fruit and international quality standards.",
+        "noData": "Ingredients list is currently not available for this product."
+      },
+      "company": {
+        "title": "CAD Import Inc",
+        "emailLabel": "Email",
+        "email": "info@cadimportinc.com",
+        "phoneLabel": "Phone",
+        "phone": "tel:+18000000000",
+        "phoneDisplay": "+1 (800) 000-0000",
+        "aboutLinkLabel": "About the CAD Import Inc",
+        "aboutUrl": "https://cadimportinc.com"
+      }
+    }
+  }
+}

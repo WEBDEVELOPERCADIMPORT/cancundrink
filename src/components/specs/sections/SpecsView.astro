@@ -1,0 +1,72 @@
+---
+import type { Lang } from "../../../i18n/config.i18n";
+import type { Product } from "../../../types/product";
+import SpecsHeader from "./SpecsHeader.astro";
+import SpecsTabs from "./SpecsTabs.astro";
+import NutritionSection from "./NutritionSection.astro";
+import IngredientsSection from "./IngredientsSection.astro";
+import CompanySection from "./CompanySection.astro";
+
+interface Props {
+  lang: Lang;
+  category: string;
+  categoryTitle: string;
+  product: Product;
+  activeTab?: "nutrition" | "ingredients" | "company";
+  initialTab?: "nutrition" | "ingredients" | "company";
+}
+
+const {
+  lang,
+  category,
+  categoryTitle,
+  product,
+  activeTab: activeTabProp,
+  initialTab,
+} = Astro.props;
+
+const activeTab = activeTabProp || initialTab || "nutrition";
+---
+
+<section
+  id="product-specs-view"
+  class="w-full min-h-screen px-4 sm:px-6 py-10 md:py-16 bg-gray-cancun mx-auto font-manrope"
+>
+  <div class="max-w-7xl mx-auto w-full">
+    <!-- Header with Breadcrumb and Product details -->
+    <SpecsHeader
+      lang={lang}
+      category={category}
+      categoryTitle={categoryTitle}
+      product={product}
+      activeTab={activeTab}
+    />
+
+    <!-- Navigation Tabs as direct URLs -->
+    <SpecsTabs
+      lang={lang}
+      category={category}
+      productSlug={product.slug}
+      activeTab={activeTab}
+    />
+
+    <!-- Active Section Container -->
+    <div
+      class="w-full flex justify-center min-h-120 animate-in fade-in duration-300"
+    >
+      {
+        activeTab === "nutrition" && (
+          <NutritionSection lang={lang} nutrition={product.nutrition} />
+        )
+      }
+
+      {
+        activeTab === "ingredients" && (
+          <IngredientsSection lang={lang} ingredients={product.ingredients} />
+        )
+      }
+
+      {activeTab === "company" && <CompanySection lang={lang} />}
+    </div>
+  </div>
+</section>

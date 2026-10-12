@@ -1,26 +1,30 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import content from '../../../data/site-categories-content.json';
-import type { Lang } from '../../../i18n/config.i18n';
+import { LANGUAGES, type Lang } from '../../../i18n/config.i18n';
 import Questions from '../../../components/home/sections/Questions.astro';
 import HeroCategory from '../../../components/category/sections/HeroCategory.astro';
+import Products from '../../../components/category/sections/Products.astro';
+import { actions } from 'astro:actions';
+import 'aos/dist/aos.css';
 
 const lang = Astro.params.lang as Lang;
-const category = Astro.params.category as string;
-const data = content[lang].categories.categories.find(c => c.slugs.includes(category));
+const categorySlug = Astro.params.category as string;
 
-if (!(lang in content)) {
+if (!lang || !(lang in LANGUAGES) || !(lang in content)) {
     return Astro.redirect('/404');
 }
-import 'aos/dist/aos.css';
-import { actions } from 'astro:actions';
-import Products from '../../../components/category/sections/Products.astro';
 
-const { data: products, error: errorProducts } = await Astro.callAction(actions.getProductsForCategory, { category });
+const data = content[lang].categories.categories.find(c => c.slugs.includes(categorySlug));
 
-if (!data) {
+if (!data || !categorySlug) {
     return Astro.redirect('/404');
 }
+
+const { data: products } = await Astro.callAction(actions.getProductsByCategory, {
+    lang,
+    categorySlug,
+});
 
 const pageTitle = `${data.title} | Cancun Drink`;
 const pageDescription = data.description;
@@ -34,7 +38,7 @@ const schema = {
             name: pageTitle,
             description: pageDescription,
             inLanguage: lang,
-            url: `https://cancundrink.com/${lang}/${category}`,
+            url: `https://cancundrink.com/${lang}/${categorySlug}`,
             image: `https://cancundrink.com${pageImage}`
         },
         {
@@ -50,7 +54,7 @@ const schema = {
                     '@type': 'ListItem',
                     position: 2,
                     name: data.title,
-                    item: `https://cancundrink.com/${lang}/${category}`
+                    item: `https://cancundrink.com/${lang}/${categorySlug}`
                 }
             ]
         },
@@ -61,7 +65,7 @@ const schema = {
                 '@type': 'ListItem',
                 position: index + 1,
                 name: product.name,
-                url: `https://cancundrink.com/${lang}/${category}/${product.slug}`
+                url: `https://cancundrink.com/${lang}/${categorySlug}/${product.slug}`
             }))
         }
     ]
@@ -73,13 +77,12 @@ const schema = {
     description={pageDescription}
     image={pageImage}
     schema={schema}
-    canonicalPath={`/${lang}/${category}`}
+    canonicalPath={`/${lang}/${categorySlug}`}
 >
-    <HeroCategory lang={lang} category={category} />
-    <Products lang={lang} products={products?.data || null} category={category} />
+    <HeroCategory lang={lang} category={categorySlug} />
+    <Products lang={lang} products={products?.data || null} category={categorySlug} />
     <Questions lang={lang} />
 </Layout>
-
 
 <script>
     import AOS from 'aos';
@@ -89,5 +92,4 @@ const schema = {
         once: true,
         offset: 100,
     });
-    
 </script>

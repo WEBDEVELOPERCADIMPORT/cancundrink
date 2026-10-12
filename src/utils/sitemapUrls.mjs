@@ -5,7 +5,7 @@ const baseUrl = 'https://cancundrink.com';
 const languages = ['es', 'en'];
 const homeSectionIds = ['hero', 'skills', 'about-koko', 'categories', 'reviews', 'places', 'questions'];
 
-const productsPath = path.resolve('./src/data/products/products.json');
+const productsPath = path.resolve('./src/data/products/products.data.json');
 const categoriesPath = path.resolve('./src/data/site-categories-content.json');
 
 /**
@@ -17,7 +17,7 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
-/** @type {{ products: Array<{ slug: string; categories: string[] }> }} */
+/** @type {{ es: Array<{ slug: string; categorySlug?: string; categories: string[] }>; en: Array<{ slug: string; categorySlug?: string; categories: string[] }> }} */
 const productsData = readJson(productsPath);
 
 /** @type {{ es: { categories: { categories: Array<{ slugs: string[] }> } } }} */
@@ -41,11 +41,15 @@ function unique(urls) {
 export function getProductSitemapUrls() {
   const urls = languages.flatMap((lang) => {
     const validCategorySlugs = localizedCategorySlugSets[lang];
+    const products = productsData[lang] || [];
 
-    return productsData.products.flatMap((product) => {
-      const localizedCategorySlugs = product.categories.filter((categorySlug) => validCategorySlugs.has(categorySlug));
+    return products.flatMap((product) => {
+      const categorySlugs =
+        product.categorySlug && validCategorySlugs.has(product.categorySlug)
+          ? [product.categorySlug]
+          : (product.categories || []).filter((categorySlug) => validCategorySlugs.has(categorySlug));
 
-      return localizedCategorySlugs.map((categorySlug) => `${baseUrl}/${lang}/${categorySlug}/${product.slug}`);
+      return categorySlugs.map((categorySlug) => `${baseUrl}/${lang}/${categorySlug}/${product.slug}`);
     });
   });
 

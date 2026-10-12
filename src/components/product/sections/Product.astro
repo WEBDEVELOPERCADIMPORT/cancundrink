@@ -1,19 +1,9 @@
 ---
-import { MoveLeft, TreePalm } from "lucide-astro";
+import { MoveLeft, TreePalm, ChevronRight } from "lucide-astro";
 import type { Lang } from "../../../i18n/config.i18n";
 import content from "../../../data/site-product-content.json";
 import BuyStoreButton from "../../utils/BuyStoreButton.astro";
-import ViewProductButton from "../../utils/ViewProductButton.astro";
-
-interface Product {
-  id?: number;
-  name: string;
-  slug: string;
-  sku: string;
-  categories: string[];
-  image: string;
-  linkVasAlSuper: string;
-}
+import type { Product } from "../../../types/product";
 
 interface Props {
   lang: Lang;
@@ -72,14 +62,28 @@ const data = content[lang].product;
     </div>
 
     <div class="flex flex-col">
-      <div class="flex items-center gap-2 mb-4">
-        <TreePalm class="w-6 h-6 text-green-cancun" />
+      <a
+        href={`/${lang}/${category}/${product.slug}/nutrition`}
+        class="inline-flex items-center gap-2 mb-4 group cursor-pointer text-black-cancun hover:text-green-cancun transition-colors w-fit"
+        title={data.specsHint}
+      >
+        <TreePalm
+          class="w-6 h-6 text-green-cancun group-hover:scale-110 transition-transform"
+        />
         <span
-          class="text-sm md:text-base font-bold tracking-widest uppercase text-black-cancun"
+          class="text-sm md:text-base font-bold tracking-widest uppercase flex items-center gap-2 group-hover:underline drop-shadow-sm"
         >
           {data.title}
+          <span
+            class="text-xs px-2.5 py-0.5 rounded-full bg-green-100 text-green-800 font-semibold tracking-normal group-hover:bg-green-cancun group-hover:text-white transition-colors"
+          >
+            {data.specsHint}
+          </span>
+          <ChevronRight
+            class="w-4 h-4 text-green-cancun group-hover:translate-x-1 transition-transform"
+          />
         </span>
-      </div>
+      </a>
 
       <h1
         class="text-3xl md:text-5xl font-extrabold text-black-cancun leading-tight mb-6 wrap-anywhere"
@@ -115,7 +119,7 @@ const data = content[lang].product;
 
       <div class="flex flex-col sm:flex-row gap-4 mt-6 w-full">
         <BuyStoreButton
-          href={product.linkVasAlSuper}
+          href={product.linkVasAlSuper || "#"}
           text={content[lang].recommended.buyOnVasAlSuper}
           class="w-full sm:w-auto py-3 px-6 bg-[#E50012] hover:bg-red-700 text-white font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
           productName={product.name}

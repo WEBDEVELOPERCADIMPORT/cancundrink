@@ -1,13 +1,18 @@
 // src/actions/index.ts
 import { getPlaces } from './places/getPlaces.action';
 import { getReviews } from './reviews/getReviews.action';
-import { getProductsForCategory } from './products/getProductsforCategory.action';
-import { getProductBySlug, getProdcutBySlug } from './products/getProductBySlug.action';
+import {
+  getProductsByCategory,
+  getProductBySlug,
+  getProductsForCategory,
+  getProdcutBySlug,
+} from './products/products.action';
 
 export const server = {
-    getReviews,
-    getPlaces,
-    getProductsForCategory,
-    getProductBySlug,
-    getProdcutBySlug
+  getReviews,
+  getPlaces,
+  getProductsByCategory,
+  getProductBySlug,
+  getProductsForCategory,
+  getProdcutBySlug,
 };

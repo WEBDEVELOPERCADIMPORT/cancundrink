@@ -1,26 +1,30 @@
 ---
 import Layout from '../../../../layouts/Layout.astro';
-import type { Lang } from '../../../../i18n/config.i18n';
+import { LANGUAGES, type Lang } from '../../../../i18n/config.i18n';
 import categoriesContent from '../../../../data/site-categories-content.json';
 import productPageContent from '../../../../data/site-product-content.json';
 import { actions } from 'astro:actions';
 import ProductSection from '../../../../components/product/sections/Product.astro';
 import RecommendedForYou from '../../../../components/product/sections/RecommendedForYou.astro';
-import 'aos/dist/aos.css';
 import Questions from '../../../../components/home/sections/Questions.astro';
+import 'aos/dist/aos.css';
 
 const lang = Astro.params.lang as Lang;
-const category = Astro.params.category as string;
-const slug = Astro.params.slug as string;
+const categorySlug = Astro.params.category as string;
+const productSlug = (Astro.params.product || Astro.params.slug) as string;
 
-if (!(lang in productPageContent) || !(lang in categoriesContent)) {
+if (!lang || !(lang in LANGUAGES) || !(lang in productPageContent) || !(lang in categoriesContent)) {
+  return Astro.redirect('/404');
+}
+
+if (!categorySlug || !productSlug) {
   return Astro.redirect('/404');
 }
 
 const categories = categoriesContent[lang].categories.categories as Array<{ slugs: string[]; title: string }>;
 
 const categoryData = categories.find((item) =>
-  item.slugs.includes(category)
+  item.slugs.includes(categorySlug)
 );
 
 if (!categoryData) {
@@ -28,8 +32,9 @@ if (!categoryData) {
 }
 
 const { data: productResponse } = await Astro.callAction(actions.getProductBySlug, {
-  slug,
-  category,
+  lang,
+  categorySlug,
+  productSlug,
 });
 
 const product = productResponse?.data ?? null;
@@ -38,12 +43,13 @@ if (!product) {
   return Astro.redirect('/404');
 }
 
-const { data: productsByCategoryResponse } = await Astro.callAction(actions.getProductsForCategory, {
-  category,
+const { data: productsByCategoryResponse } = await Astro.callAction(actions.getProductsByCategory, {
+  lang,
+  categorySlug,
 });
 
 const recommendedProducts = (productsByCategoryResponse?.data ?? []).filter(
-  (item) => item.slug !== slug
+  (item) => item.slug !== productSlug
 );
 
 const pageTitle = `${product.name} | ${categoryData.title} | Cancun Drink`;
@@ -63,7 +69,7 @@ const schema = {
         '@type': 'Brand',
         name: 'Cancun Drink'
       },
-      url: `https://cancundrink.com/${lang}/${category}/${slug}`
+      url: `https://cancundrink.com/${lang}/${categorySlug}/${productSlug}`
     },
     {
       '@type': 'BreadcrumbList',
@@ -78,13 +84,13 @@ const schema = {
           '@type': 'ListItem',
           position: 2,
           name: categoryData.title,
-          item: `https://cancundrink.com/${lang}/${category}`
+          item: `https://cancundrink.com/${lang}/${categorySlug}`
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: product.name,
-          item: `https://cancundrink.com/${lang}/${category}/${slug}`
+          item: `https://cancundrink.com/${lang}/${categorySlug}/${productSlug}`
         }
       ]
     }
@@ -98,18 +104,18 @@ const schema = {
   description={pageDescription}
   image={pageImage}
   schema={schema}
-  canonicalPath={`/${lang}/${category}/${slug}`}
+  canonicalPath={`/${lang}/${categorySlug}/${productSlug}`}
 >
   <ProductSection
     lang={lang}
-    category={category}
+    category={categorySlug}
     categoryTitle={categoryData.title}
     product={product}
   />
   <RecommendedForYou
     lang={lang}
-    category={category}
-    products={recommendedProducts as any}
+    category={categorySlug}
+    products={recommendedProducts}
   />
   <Questions lang={lang} />
 </Layout>
