@@ -1,6 +1,6 @@
 // src/actions/index.ts
 import { getPlaces } from './places/getPlaces.action';
-import { getReviews } from './reviews/getReviews.action';
+import { getReviews, getReviewById } from './reviews/getReviews.action';
 import {
   getProductsByCategory,
   getProductBySlug,
@@ -11,6 +11,7 @@ import {
 
 export const server = {
   getReviews,
+  getReviewById,
   getPlaces,
   getProductsByCategory,
   getProductBySlug,
