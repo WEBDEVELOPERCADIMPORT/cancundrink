@@ -1,9 +1,6 @@
 import type { Lang } from '../i18n/config.i18n';
-import type { Product, ProductsByLanguage } from '../types/product';
+import type { Product } from '../types/product';
 import categoriesContent from '../data/site-categories-content.json';
-import localProductsData from '../data/products/products.data.json';
-
-const typedLocalProducts = localProductsData as unknown as ProductsByLanguage;
 
 export const BACKEND_CONFIG = {
   baseUrl: (typeof process !== 'undefined' && process.env?.BACKEND_API_URL) || 'https://webadminsystem.cadimportinc.com/api/v1/content',
@@ -91,8 +88,8 @@ export async function fetchFromBackend(
 }
 
 /**
- * Obtiene los productos por categoría desde el backend central enviando el categoryslug
- * en el idioma correspondiente.
+ * Obtiene los productos por categoría directamente desde el backend central
+ * enviando el categoryslug en el idioma correspondiente.
  */
 export async function getProductsByCategoryFromBackend(
   lang: Lang,
@@ -100,44 +97,26 @@ export async function getProductsByCategoryFromBackend(
 ): Promise<Product[]> {
   const resolvedCategorySlug = getCategorySlugForLang(categorySlug, lang);
 
-  const products = await fetchFromBackend(lang, {
+  return await fetchFromBackend(lang, {
     categoryslug: resolvedCategorySlug,
-  });
-
-  if (products.length > 0) {
-    return products;
-  }
-
-  // Fallback seguro a datos locales si la API está vacía o sin conexión
-  const localList = typedLocalProducts[lang] ?? [];
-  return localList.filter((p) => {
-    const cat = p.categoryslug || p.categorySlug;
-    return cat === categorySlug || cat === resolvedCategorySlug || p.categories?.includes(categorySlug) || p.categories?.includes(resolvedCategorySlug);
   });
 }
 
 /**
- * Obtiene un producto por su id de negocio mediante query params (?id=...)
- * tal como requiere la API del backend central para no confundirlo con el ID interno del CMS.
+ * Obtiene un producto por su id mediante query params (?id=...)
+ * directamente desde la API central.
  */
 export async function getProductByIdFromBackend(
   lang: Lang,
   id: number | string
 ): Promise<Product | null> {
   const products = await fetchFromBackend(lang, { id });
-
-  if (products.length > 0) {
-    return products[0];
-  }
-
-  // Fallback seguro a datos locales si no se encuentra en la API
-  const numId = Number(id);
-  const localList = typedLocalProducts[lang] ?? [];
-  return localList.find((p) => p.id === numId || String(p.id) === String(id)) ?? null;
+  return products[0] ?? null;
 }
 
 /**
  * Obtiene un producto por slug (o id numérico) mediante query params
+ * directamente desde la API central.
  */
 export async function getProductBySlugFromBackend(
   lang: Lang,
@@ -166,18 +145,5 @@ export async function getProductBySlugFromBackend(
     }
   }
 
-  // Fallback seguro a datos locales
-  const localList = typedLocalProducts[lang] ?? [];
-  return (
-    localList.find((item) => {
-      const matchesSlug = item.slug === productSlug;
-      const cat = item.categoryslug || item.categorySlug;
-      const matchesCategory = categorySlug
-        ? cat === categorySlug ||
-          cat === getCategorySlugForLang(categorySlug, lang) ||
-          item.categories?.includes(categorySlug)
-        : true;
-      return matchesSlug && matchesCategory;
-    }) ?? null
-  );
+  return null;
 }
