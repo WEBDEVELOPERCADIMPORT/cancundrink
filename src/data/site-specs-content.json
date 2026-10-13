@@ -44,8 +44,8 @@
         "emailLabel": "Email",
         "email": "info@cadimportinc.com",
         "phoneLabel": "Teléfono",
-        "phone": "tel:+18000000000",
-        "phoneDisplay": "+1 (800) 000-0000",
+        "phone": "tel:+13026284178",
+        "phoneDisplay": "+1 (302) 628-4178.",
         "aboutLinkLabel": "About the CAD Import Inc",
         "aboutUrl": "https://cadimportinc.com"
       }
@@ -96,8 +96,8 @@
         "emailLabel": "Email",
         "email": "info@cadimportinc.com",
         "phoneLabel": "Phone",
-        "phone": "tel:+18000000000",
-        "phoneDisplay": "+1 (800) 000-0000",
+        "phone": "tel:+13026284178",
+        "phoneDisplay": "+1 (302) 628-4178.",
         "aboutLinkLabel": "About the CAD Import Inc",
         "aboutUrl": "https://cadimportinc.com"
       }
