@@ -2,8 +2,8 @@ import type { Review, BackendReviewItemWrapper, BackendReviewsApiResponse } from
 import fallbackReviews from '../data/reviews/reviews.data.json';
 
 export const BACKEND_CONFIG = {
-  baseUrl: (typeof process !== 'undefined' && process.env?.BACKEND_API_URL) || 'https://webadminsystem.cadimportinc.com/api/v1/content',
-  apiKey: (typeof process !== 'undefined' && process.env?.BACKEND_API_KEY) || '399558ca-2f9c-412a-ace3-63c6757edaf8',
+  baseUrl: (typeof process !== 'undefined' && process.env?.BACKEND_API_URL) || '',
+  apiKey: (typeof process !== 'undefined' && process.env?.BACKEND_API_KEY) || '',
 };
 
 /**
